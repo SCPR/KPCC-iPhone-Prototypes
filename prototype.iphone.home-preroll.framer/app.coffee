@@ -44,7 +44,7 @@ home.ShowTIle.states.add({
 })
 home.ShowTIle.states.animationOptions = {
 	curve: "linear",
-	time: 0.2
+	time: 0.3
 }
 
 # Show Title - On Now
@@ -127,7 +127,7 @@ home.Progress.states.add({
     engaged: {width:612}
 })
 home.Progress.states.animationOptions = {
-	curve: "linear",
+	curve: "ease-in-out",
 	time: 11
 }
 
@@ -161,9 +161,10 @@ home.PlayBtn.on Events.TouchEnd, ->
 	home.AdProgress.on Events.AnimationEnd, ->
 	  home.Progress.animate
 	      properties:
-	          width:100
-	          time: 0.3
-	      curve: "ease-in-out"
+	          width:100,
+	          time: .17
+	      curve: "linear",
+	      time: 0.25
 	  home.AdProgress.opacity = 0
 	  home.AdUnit.states.switch("initial")
 	  home.ShowTIle.states.switch("initial")
