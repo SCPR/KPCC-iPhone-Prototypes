@@ -10,6 +10,8 @@
     window.FramerStudio = {};
   }
 
+  window.onerror = null;
+
   window.midiCommand = window.midiCommand || function() {};
 
   if (Framer.Device) {
