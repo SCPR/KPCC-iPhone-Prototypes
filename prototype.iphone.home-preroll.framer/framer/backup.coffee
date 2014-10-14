@@ -58,7 +58,8 @@ home.ShowTitleEngaged.states.add({
     engaged: {scale:1, opacity:1}
 })
 home.ShowTitleEngaged.states.animationOptions = {
-	curve: curve1
+	curve: "linear",
+	time: 0.2
 }
 
 # Default State Play Button
@@ -77,7 +78,8 @@ home.AdUnit.states.add({
     preroll: {y:150},
 })
 home.AdUnit.states.animationOptions = {
-	curve: curve2
+	curve: "ease-out",
+	time: 0.25
 }
 
 # Pause Button
@@ -85,7 +87,8 @@ home.PauseBtn.states.add({
     engaged: {y:802}
 })
 home.PauseBtn.states.animationOptions = {
-	curve: curve2
+	curve: "ease-out",
+	time: 0.25
 }
 
 # UI Divider
@@ -93,8 +96,8 @@ home.DividerProgress.states.add({
     engaged: {width:612, x: 14}
 })
 home.DividerProgress.states.animationOptions = {
-	curve: "linear",
-	time: 0.2
+	curve: "ease-out",
+	time: 0.25
 }
 
 # Orange Progress Bar
