@@ -161,10 +161,9 @@ home.PlayBtn.on Events.TouchEnd, ->
 	home.AdProgress.on Events.AnimationEnd, ->
 	  home.Progress.animate
 	      properties:
-	          width:100,
-	          time: .17
-	      curve: "linear",
-	      time: 0.25
+	          width:100
+	      curve: "ease-out",
+	      time: 0.4
 	  home.AdProgress.opacity = 0
 	  home.AdUnit.states.switch("initial")
 	  home.ShowTIle.states.switch("initial")

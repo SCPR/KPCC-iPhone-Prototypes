@@ -468,7 +468,7 @@ window.__imported__["home/layers.json.js"] = [
             "y" : 168,
             "x" : 20,
             "width" : 600,
-            "height" : 547
+            "height" : 561
           }
         },
         "imageType" : "png",
@@ -476,7 +476,7 @@ window.__imported__["home/layers.json.js"] = [
           "y" : 168,
           "x" : 20,
           "width" : 600,
-          "height" : 547
+          "height" : 561
         },
         "name" : "AdUnit"
       },

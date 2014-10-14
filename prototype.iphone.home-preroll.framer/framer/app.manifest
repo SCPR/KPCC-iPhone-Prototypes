@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 1413325639.944675
+# 1413327399.472966
 CACHE:
 /_server/server.js
 ../.DS_Store
@@ -25,7 +25,6 @@ CACHE:
 ../images/.DS_Store
 ../images/framer-icon.png
 ../imported/.DS_Store
-../imported/home/.DS_Store
 ../imported/home/images/AdProgress-215E7EBE-7028-4C7A-81AB-8B1F72388B8A.png
 ../imported/home/images/AdUnit-A2822688-1DC6-4C5E-9618-3053029DF5D3.png
 ../imported/home/images/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png
