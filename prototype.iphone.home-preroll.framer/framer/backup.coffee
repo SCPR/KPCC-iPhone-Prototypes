@@ -14,12 +14,15 @@ Framer.Device.background.image = "http://a.scpr.org/i/7a376d4259ccd459d68495f8ee
 ###############################
 
 home.AdUnit.y = -500
+home.AdProgress.width = 0
 home.ShowTitleEngaged.opacity = 0
-home.ShowTitleEngaged.scale = 0
+home.ShowTitleEngaged.opacity = 0
+home.ShowTitlePaused.opacity = 0
 home.DividerProgress.width = 0
 home.DividerProgress.x = 320
 home.Progress.width = 0
 home.PauseBtn.y = 1300
+home.PlayBtnSmall.y = 1300
 
 
 ###############################
@@ -55,11 +58,11 @@ home.ShowTitleInitial.states.animationOptions = {
 
 # Show Title - Live
 home.ShowTitleEngaged.states.add({
-    engaged: {scale:1, opacity:1}
+    engaged: {opacity:1}
 })
 home.ShowTitleEngaged.states.animationOptions = {
-	curve: "linear",
-	time: 0.2
+	curve: "ease-in-out",
+	time: 0.6
 }
 
 # Default State Play Button
@@ -82,13 +85,32 @@ home.AdUnit.states.animationOptions = {
 	time: 0.25
 }
 
+# Ad Progress Bar
+home.AdProgress.states.add({
+    engaged: {width:600}
+})
+home.AdProgress.states.animationOptions = {
+	curve: "linear",
+	time: 11
+}
+
 # Pause Button
 home.PauseBtn.states.add({
-    engaged: {y:802}
+    engaged: {y:802},
+    press: {scale: 0.95, curve: curve1},
 })
 home.PauseBtn.states.animationOptions = {
 	curve: "ease-out",
 	time: 0.25
+}
+
+# Small Play Button
+home.PlayBtnSmall.states.add({
+    initial: {scale:1, opacity:1, curve: curve1},
+    press:   {scale: 0.95, curve: curve1}
+})
+home.PlayBtnSmall.states.animationOptions = {
+	curve: curve1
 }
 
 # UI Divider
@@ -105,7 +127,7 @@ home.Progress.states.add({
     engaged: {width:612}
 })
 home.Progress.states.animationOptions = {
-	curve: "linear",
+	curve: "ease-in-out",
 	time: 11
 }
 
@@ -129,21 +151,45 @@ home.PlayBtn.on Events.TouchEnd, ->
   home.PauseBtn.states.switch("engaged")
   home.DividerProgress.states.switch("engaged")
   document.getElementById("preroll").play()
-  home.Progress.states.switch("engaged")
-  home.Progress.animate 
+  home.AdProgress.states.switch("engaged")
+  home.AdProgress.animate 
     properties:
-        width:612
+        width:600
         time: 11
 	curve: "linear"
 
-	home.Progress.on Events.AnimationEnd, ->
+	home.AdProgress.on Events.AnimationEnd, ->
 	  home.Progress.animate
 	      properties:
 	          width:100
-	          time: 0.1
+	          time: 0.175
 	      curve: "ease-in-out"
+	  home.AdProgress.opacity = 0
 	  home.AdUnit.states.switch("initial")
 	  home.ShowTIle.states.switch("initial")
 	  home.ShowTitleEngaged.states.switch("engaged")
 	  document.getElementById("stream").play()
   
+  
+# Make pause button respond to touch
+home.PauseBtn.on Events.TouchStart, ->
+  home.PauseBtn.states.switch("press")
+  
+home.PauseBtn.on Events.TouchEnd, ->
+  home.PauseBtn.y = 1300
+  home.PlayBtnSmall.y = 802
+  home.ShowTitleEngaged.opacity = 0
+  home.ShowTitlePaused.opacity = 1
+  document.getElementById("preroll").pause()
+  document.getElementById("stream").pause()
+  
+# Make small play button respond to touch
+home.PlayBtnSmall.on Events.TouchStart, ->
+  home.PlayBtnSmall.states.switch("press")
+  
+home.PlayBtnSmall.on Events.TouchEnd, ->
+  home.PauseBtn.y = 802
+  home.PlayBtnSmall.y = 1300
+  home.ShowTitleEngaged.opacity = 1
+  home.ShowTitlePaused.opacity = 0
+  document.getElementById("stream").play()

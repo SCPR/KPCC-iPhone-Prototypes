@@ -100,7 +100,8 @@
 
 }).call(this);
 
-// Layer info for /Users/sean/Desktop/d.kpcc.iphone.3.0/prototypes/prototype.iphone.home-preroll.framer/imported/home/layers.json.js
+// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.home-preroll.framer/imported/.DS_Store/layers.json.js
+// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.home-preroll.framer/imported/home/layers.json.js
 window.__imported__ = window.__imported__ || {};
 window.__imported__["home/layers.json.js"] = [
   {
@@ -233,6 +234,31 @@ window.__imported__["home/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
+        "id" : "9E758DFA-6C03-4B88-9DF5-9B17E1E1EAD6",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/PlayBtnSmall-9E758DFA-6C03-4B88-9DF5-9B17E1E1EAD6.png",
+          "frame" : {
+            "y" : 802,
+            "x" : 232,
+            "width" : 176,
+            "height" : 176
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 802,
+          "x" : 232,
+          "width" : 176,
+          "height" : 176
+        },
+        "name" : "PlayBtnSmall"
+      },
+      {
+        "maskFrame" : null,
         "id" : "7CB212C5-2C0E-417D-8311-9EB5473181C7",
         "visible" : true,
         "children" : [
@@ -331,6 +357,31 @@ window.__imported__["home/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
+        "id" : "07F31D49-796A-4589-B0C7-7534E1A87127",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowTitlePaused-07F31D49-796A-4589-B0C7-7534E1A87127.png",
+          "frame" : {
+            "y" : 608,
+            "x" : 38,
+            "width" : 564,
+            "height" : 99
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 608,
+          "x" : 38,
+          "width" : 564,
+          "height" : 99
+        },
+        "name" : "ShowTitlePaused"
+      },
+      {
+        "maskFrame" : null,
         "id" : "A7E14A90-65E7-4966-916B-4DF3618F2925",
         "visible" : true,
         "children" : [
@@ -378,6 +429,31 @@ window.__imported__["home/layers.json.js"] = [
           "height" : 99
         },
         "name" : "ShowTitleInitial"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "215E7EBE-7028-4C7A-81AB-8B1F72388B8A",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/AdProgress-215E7EBE-7028-4C7A-81AB-8B1F72388B8A.png",
+          "frame" : {
+            "y" : 667,
+            "x" : 18,
+            "width" : 129,
+            "height" : 6
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 667,
+          "x" : 18,
+          "width" : 129,
+          "height" : 6
+        },
+        "name" : "AdProgress"
       },
       {
         "maskFrame" : null,
