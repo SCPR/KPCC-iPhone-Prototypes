@@ -1,7 +1,8 @@
 CACHE MANIFEST
-# 1413396652.056079
+# 1413413124.093079
 CACHE:
 /_server/server.js
+../.DS_Store
 ../app.coffee
 ../framer/.bowerrc
 ../framer/app.manifest
@@ -21,6 +22,7 @@ CACHE:
 ../framer/style.css
 ../framer/version
 ../images/framer-icon.png
+../imported/.DS_Store
 ../imported/live-rewind/images/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png
 ../imported/live-rewind/images/LiveRewindLabel-147238C2-E4D7-4AEE-8E3F-FFAF27EAE107.png
 ../imported/live-rewind/images/Navbar-AC8C33DE-82A1-428F-B26D-09A41C4DD7AE.png

@@ -188,5 +188,5 @@ liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
 	  	liveRewind.PauseRects.states.switch("engaged")
 	  	liveRewind.Spinner.states.switch("dismiss")
 	  	document.getElementById("stream").play()
-	  ), 3500
+	  ), 3000
 	

@@ -1,6 +1,16 @@
 # Imports all the layers for "live-rewind" into liveRewind
 liveRewind = Framer.Importer.load "imported/live-rewind"
 
+# Create layer for SVG animation
+liveRewind.Spinner = new Layer()
+liveRewind.Spinner.backgroundColor = "transparent"
+liveRewind.Spinner.x = 226
+liveRewind.Spinner.y = 795
+liveRewind.Spinner.width = 184
+liveRewind.Spinner.height = 184
+liveRewind.Spinner.html = "<svg class='spinner' width='188px' height='188px' viewBox='0 0 66 66' xmlns='http://www.w3.org/2000/svg'><circle class='path' fill='none' stroke-width='1' stroke-linecap='round' cx='33' cy='33' r='30'></circle></svg>"
+
+
 ###############################
 # Set up device attributes
 ###############################
@@ -16,11 +26,12 @@ Framer.Device.background.image = "http://a.scpr.org/i/7a376d4259ccd459d68495f8ee
 liveRewind.ShowTitleEngaged.opacity = 0
 liveRewind.ShowTitleRewinding.opacity = 0
 liveRewind.PauseRects.opacity = 0
+liveRewind.PauseRects.scale = 0
 liveRewind.DividerProgress.width = 0
 liveRewind.DividerProgress.x = 320
 liveRewind.Progress.width = 0
-liveRewind.PauseBtn.y = 1300
-
+liveRewind.PauseBtn.opacity = 0
+liveRewind.Spinner.opacity = 0
 
 ###############################
 # Set some animation styles
@@ -41,7 +52,7 @@ liveRewind.ShowTIle.states.add({
 })
 liveRewind.ShowTIle.states.animationOptions = {
   curve: "linear",
-  time: 0.3
+  time: 0.4
 }
 
 # Home Play Button
@@ -62,13 +73,23 @@ liveRewind.ShowTitleInitial.states.animationOptions = {
   curve: curve1
 }
 
+# Show Title - Rewinding
+liveRewind.ShowTitleRewinding.states.add({
+    engaged: {opacity:1},
+    dismiss: {opacity:0}
+})
+liveRewind.ShowTitleRewinding.states.animationOptions = {
+  curve: "ease-in-out",
+  time: 0.3
+}
+
 # Show Title - Live
 liveRewind.ShowTitleEngaged.states.add({
     engaged: {opacity:1}
 })
 liveRewind.ShowTitleEngaged.states.animationOptions = {
-  curve: "ease-in-out",
-  time: 0.6
+  curve: "linear",
+  time: 0.1
 }
 
 # Live Rewind Label
@@ -83,12 +104,30 @@ liveRewind.LiveRewindLabel.states.animationOptions = {
 
 # Pause Button
 liveRewind.PauseBtn.states.add({
-    engaged: {y:802},
-    press: {scale: 0.95, curve: curve1},
+    engaged: {opacity:1},
+    press: {scale: 0.95, curve: curve1}
 })
 liveRewind.PauseBtn.states.animationOptions = {
   curve: "ease-out",
   time: 0.25
+}
+
+# Pause Button Rectangles
+liveRewind.PauseRects.states.add({
+    engaged: {scale:1, opacity:1}
+})
+liveRewind.PauseRects.states.animationOptions = {
+  curve: curve2
+}
+
+# Spinner
+liveRewind.Spinner.states.add({
+    engaged: {opacity: 1},
+    dismiss: {opacity: 0}
+})
+liveRewind.Spinner.states.animationOptions = {
+  curve: "ease-out",
+  time: 0.4
 }
 
 # UI Divider
@@ -126,5 +165,28 @@ liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
   liveRewind.ShowTitleInitial.states.switch("dismiss")
   liveRewind.PlayBtn.states.switch("dismiss")
   liveRewind.LiveRewindLabel.states.switch("dismiss")
-  liveRewind.PauseBtn.states.switch("engaged")
-  liveRewind.DividerProgress.states.switch("engaged")
+  liveRewind.Spinner.states.switch("engaged")
+  liveRewind.ShowTitleRewinding.states.switch("engaged")
+  liveRewind.DividerProgress.animate 
+    properties:
+      width:612
+      x:14
+    time: 0.25
+	curve: "ease-out"
+	
+	liveRewind.DividerProgress.on Events.AnimationEnd, ->
+	  setTimeout ( ->
+	  	liveRewind.Progress.animate
+	      properties:
+	          width:10
+	      curve: "ease-out",
+	      time: 0.3
+	  	liveRewind.ShowTIle.states.switch("initial")
+	  	liveRewind.ShowTitleRewinding.opacity = 0
+	  	liveRewind.ShowTitleEngaged.opacity = 1
+	  	liveRewind.PauseBtn.states.switch("engaged")
+	  	liveRewind.PauseRects.states.switch("engaged")
+	  	liveRewind.Spinner.states.switch("dismiss")
+	  	document.getElementById("stream").play()
+	  ), 3000
+	
