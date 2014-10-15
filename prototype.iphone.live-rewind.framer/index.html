@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+
+		<link rel="apple-touch-icon" href="framer/images/icon-120.png">
+		<link rel="apple-touch-icon" href="framer/images/icon-76.png" sizes="76x76">
+		<link rel="apple-touch-icon" href="framer/images/icon-120.png" sizes="120x120">
+		<link rel="apple-touch-icon" href="framer/images/icon-152.png" sizes="152x152">
+
+		<link rel="stylesheet" type="text/css" href="framer/style.css">
+
+		<script src="framer/coffee-script.js"></script>
+		<script src="framer/framer.js"></script>
+		<script src="framer/framer.generated.js"></script>
+		<script src="framer/init.js"></script>
+
+		<style>
+			html, body {
+			  height: 100%;
+			}
+
+			body {
+			  background: #000;
+			  display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -ms-flexbox;
+			  display: flex;
+			  -webkit-box-align: center;
+			  -webkit-align-items: center;
+			      -ms-flex-align: center;
+			          align-items: center;
+			  -webkit-box-pack: center;
+			  -webkit-justify-content: center;
+			      -ms-flex-pack: center;
+			          justify-content: center;
+			}
+
+			.spinner {
+			  -webkit-animation: rotator 1.2s linear infinite;
+			          animation: rotator 1.2s linear infinite;
+			}
+
+			@-webkit-keyframes rotator {
+			  0% {
+			    -webkit-transform: rotate(0deg);
+			            transform: rotate(0deg);
+			  }
+			  100% {
+			    -webkit-transform: rotate(270deg);
+			            transform: rotate(270deg);
+			  }
+			}
+
+			@keyframes rotator {
+			  0% {
+			    -webkit-transform: rotate(0deg);
+			            transform: rotate(0deg);
+			  }
+			  100% {
+			    -webkit-transform: rotate(270deg);
+			            transform: rotate(270deg);
+			  }
+			}
+			.path {
+			  stroke-dasharray: 187;
+			  stroke-dashoffset: 0;
+			  -webkit-transform-origin: center;
+			      -ms-transform-origin: center;
+			          transform-origin: center;
+			  -webkit-animation: dash 1.2s ease-in-out infinite, colors 4.8s ease-in-out infinite;
+			          animation: dash 1.2s ease-in-out infinite, colors 4.8s ease-in-out infinite;
+			}
+
+			@-webkit-keyframes colors {
+			  0% {
+			    stroke: #fff;
+			  }
+			  100% {
+			    stroke: #fff;
+			  }
+			}
+
+			@keyframes colors {
+			  0% {
+			    stroke: #fff;
+			  }
+			  100% {
+			    stroke: #fff;
+			  }
+			}
+			@-webkit-keyframes dash {
+			  0% {
+			    stroke-dashoffset: 187;
+			  }
+			  50% {
+			    stroke-dashoffset: 46.75;
+			    -webkit-transform: rotate(135deg);
+			            transform: rotate(135deg);
+			  }
+			  100% {
+			    stroke-dashoffset: 187;
+			    -webkit-transform: rotate(450deg);
+			            transform: rotate(450deg);
+			  }
+			}
+			@keyframes dash {
+			  0% {
+			    stroke-dashoffset: 187;
+			  }
+			  50% {
+			    stroke-dashoffset: 46.75;
+			    -webkit-transform: rotate(135deg);
+			            transform: rotate(135deg);
+			  }
+			  100% {
+			    stroke-dashoffset: 187;
+			    -webkit-transform: rotate(450deg);
+			            transform: rotate(450deg);
+			  }
+			}
+
+
+		</style>
+
+	</head>
+	<body>
+		<audio src="http://live.scpr.org/kpcclive?preskip=1" id="stream"></audio>
+	</body>
+</html>

@@ -16,7 +16,6 @@ Framer.Device.background.image = "http://a.scpr.org/i/7a376d4259ccd459d68495f8ee
 home.AdUnit.y = -500
 home.AdProgress.width = 0
 home.ShowTitleEngaged.opacity = 0
-home.ShowTitleEngaged.opacity = 0
 home.ShowTitlePaused.opacity = 0
 home.DividerProgress.width = 0
 home.DividerProgress.x = 320
