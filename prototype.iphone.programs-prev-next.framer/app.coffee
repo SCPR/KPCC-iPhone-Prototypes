@@ -18,7 +18,7 @@ prevNext.NextTrackProgress.opacity = 0
 prevNext.NextEpisodeTitle.x = 650 
 prevNext.PrevEpisodeTitle.x = -450 
 prevNext.CurrentEpisodeTitle.y = 100
-prevNext.NextEpisodeTitle.y = 300
+prevNext.NextEpisodeTitle.y = 100
 
 # Create Transparent Layer for Dragging
 prevNext.dragCanvas = new Layer
@@ -27,6 +27,7 @@ prevNext.dragCanvas = new Layer
 # Make Title layers subLayers of draggable canvas
 prevNext.dragCanvas.addSubLayer(prevNext.CurrentEpisodeTitle)
 prevNext.dragCanvas.addSubLayer(prevNext.NextEpisodeTitle)
+
   
 ###############################
 # Set some animation styles
@@ -57,7 +58,7 @@ prevNext.CurrentTrackProgress.states.add({
 })
 prevNext.CurrentTrackProgress.states.animationOptions = {
 	curve: "linear",
-	time: 0.1
+	time: 0.075
 }
 
 # Content Share Button
@@ -67,7 +68,7 @@ prevNext.ContentShare.states.add({
 })
 prevNext.ContentShare.states.animationOptions = {
 	curve: "linear",
-	time: 0.1
+	time: 0.075
 }
 
 
@@ -87,24 +88,38 @@ windowWidth = window.innerHeight
 
 # Set behavior on DragMove
 prevNext.dragCanvas.on Events.DragMove, (event) ->
-
+	
   # Blur ProgramTile, fade current track progress and share button
   prevNext.ShowTile.states.switch("blur")
   prevNext.CurrentTrackProgress.states.switch("hidden")
   prevNext.ContentShare.states.switch("hidden")
   
-  if prevNext.dragCanvas.x < 0
-  	# do something
-  else
-  	# do something else
+  # set boundary for draggable canvas
+  boundRadius = 700
+  # Set resistance and boundaries on draggable layer
+  position = x: 0
+  distance = x: Math.abs(prevNext.dragCanvas.x - position.x)
+  prevNext.dragCanvas.draggable.speedX = 2 - Math.min(distance.x, boundRadius) / boundRadius
+
   
 # Set behavior on DragEnd
 prevNext.dragCanvas.on Events.DragEnd, ->
+
+  # Set layer states
   prevNext.ShowTile.states.switch("initial")
   prevNext.CurrentTrackProgress.states.switch("initial")
   prevNext.ContentShare.states.switch("initial")
-  prevNext.dragCanvas.animate 
-    properties:
-      x: initX
-    curve: curve2
+  
+  if prevNext.dragCanvas.x < -400
+  	# Advance to next episode
+  	prevNext.dragCanvas.animate 
+      properties:
+        x: -620
+      curve: curve2
+  else
+  	# Slide UI back to currently playing episode
+  	prevNext.dragCanvas.animate 
+      properties:
+        x: initX
+      curve: curve2
 
