@@ -180,6 +180,31 @@ window.__imported__["prev-next/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
+        "id" : "3884082B-1240-4A67-87EF-83D58249CEE7",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/LoadingEpisode-3884082B-1240-4A67-87EF-83D58249CEE7.png",
+          "frame" : {
+            "y" : 702,
+            "x" : 32,
+            "width" : 122,
+            "height" : 34
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 702,
+          "x" : 32,
+          "width" : 122,
+          "height" : 34
+        },
+        "name" : "LoadingEpisode"
+      },
+      {
+        "maskFrame" : null,
         "id" : "30E1805B-E6CE-42AD-B437-BA2E3EA59CC8",
         "visible" : true,
         "children" : [

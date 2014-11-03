@@ -1,6 +1,16 @@
 # This imports all the layers for "prev-next" into prevNextLayers
 prevNext = Framer.Importer.load "imported/prev-next"
 
+# Create layer for SVG animation
+prevNext.Spinner = new Layer()
+prevNext.Spinner.backgroundColor = "transparent"
+prevNext.Spinner.x = 226
+prevNext.Spinner.y = 825
+prevNext.Spinner.width = 184
+prevNext.Spinner.height = 184
+prevNext.Spinner.html = "<svg class='spinner' width='188px' height='188px' viewBox='0 0 66 66' xmlns='http://www.w3.org/2000/svg'><circle class='path' fill='none' stroke-width='1' stroke-linecap='round' cx='33' cy='33' r='30'></circle></svg>"
+
+
 ###############################
 # Set up device attributes
 ###############################
@@ -19,6 +29,8 @@ prevNext.NextEpisodeTitle.x = 650
 prevNext.PrevEpisodeTitle.x = -450 
 prevNext.CurrentEpisodeTitle.y = 100
 prevNext.NextEpisodeTitle.y = 100
+prevNext.LoadingEpisode.opacity = 0
+prevNext.Spinner.opacity = 0
 
 # Create Transparent Layer for Dragging
 prevNext.dragCanvas = new Layer
@@ -61,6 +73,17 @@ prevNext.CurrentTrackProgress.states.animationOptions = {
 	time: 0.075
 }
 
+# Next Track Progress
+prevNext.NextTrackProgress.states.add({
+    hidden: {opacity:0},
+    initial: {opacity:1},
+})
+prevNext.NextTrackProgress.states.animationOptions = {
+	curve: "linear",
+	time: 0.075
+}
+
+
 # Content Share Button
 prevNext.ContentShare.states.add({
     hidden: {opacity:0},
@@ -69,6 +92,36 @@ prevNext.ContentShare.states.add({
 prevNext.ContentShare.states.animationOptions = {
 	curve: "linear",
 	time: 0.075
+}
+
+# Loading UI Label
+prevNext.LoadingEpisode.states.add({
+    hidden: {opacity:0},
+    engaged: {opacity:1},
+})
+prevNext.LoadingEpisode.states.animationOptions = {
+	curve: "linear",
+	time: 0.1
+}
+
+# Pause Button
+prevNext.PauseBtn.states.add({
+    engaged: {opacity:1},
+    hidden:  {opacity:0}
+})
+prevNext.PauseBtn.states.animationOptions = {
+  curve: "ease-out",
+  time: 0.25
+}
+
+# Spinner
+prevNext.Spinner.states.add({
+    engaged: {opacity: 1},
+    dismiss: {opacity: 0}
+})
+prevNext.Spinner.states.animationOptions = {
+  curve: "ease-out",
+  time: 0.4
 }
 
 
@@ -104,19 +157,36 @@ prevNext.dragCanvas.on Events.DragMove, (event) ->
   
 # Set behavior on DragEnd
 prevNext.dragCanvas.on Events.DragEnd, ->
-
-  # Set layer states
-  prevNext.ShowTile.states.switch("initial")
-  prevNext.CurrentTrackProgress.states.switch("initial")
-  prevNext.ContentShare.states.switch("initial")
   
   if prevNext.dragCanvas.x < -400
+    
+  	# Set layer states
+  	prevNext.PauseBtn.states.switch("hidden")
+  	prevNext.Spinner.states.switch("engaged")
+  	prevNext.LoadingEpisode.states.switch("engaged")
+  	
+  	Utils.delay 2, -> 
+  	  prevNext.LoadingEpisode.states.switch("hidden")
+  	  prevNext.NextTrackProgress.states.switch("initial")
+  	  prevNext.ContentShare.states.switch("initial")
+  	  prevNext.PauseBtn.states.switch("engaged")
+  	  prevNext.Spinner.opacity = 0
+  	  
+  	  Utils.delay 0.2, ->
+  	  	prevNext.ShowTile.states.switch("initial")
+  	
   	# Advance to next episode
   	prevNext.dragCanvas.animate 
       properties:
         x: -620
       curve: curve2
   else
+  	# Set layer states
+    prevNext.ShowTile.states.switch("initial")
+    prevNext.CurrentTrackProgress.states.switch("initial")
+    prevNext.NextTrackProgress.states.switch("hidden")
+    prevNext.ContentShare.states.switch("initial")
+  
   	# Slide UI back to currently playing episode
   	prevNext.dragCanvas.animate 
       properties:
