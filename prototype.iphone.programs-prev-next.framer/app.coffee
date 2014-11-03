@@ -80,7 +80,7 @@ prevNext.NextTrackProgress.states.add({
 })
 prevNext.NextTrackProgress.states.animationOptions = {
 	curve: "linear",
-	time: 0.075
+	time: 0.2
 }
 
 
@@ -171,9 +171,7 @@ prevNext.dragCanvas.on Events.DragEnd, ->
   	  prevNext.ContentShare.states.switch("initial")
   	  prevNext.PauseBtn.states.switch("engaged")
   	  prevNext.Spinner.opacity = 0
-  	  
-  	  Utils.delay 0.2, ->
-  	  	prevNext.ShowTile.states.switch("initial")
+  	  prevNext.ShowTile.states.switch("initial")
   	
   	# Advance to next episode
   	prevNext.dragCanvas.animate 
