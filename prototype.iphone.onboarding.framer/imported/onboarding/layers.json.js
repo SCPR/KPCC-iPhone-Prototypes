@@ -13,7 +13,7 @@ window.__imported__["onboarding/layers.json.js"] = [
 
         ],
         "image" : {
-          "path" : "images\/Welcome_Divider-F049D0C8-5BFF-4F2F-BB33-08CB6C57C105.png",
+          "path" : "images\/WelcomeDivider-F049D0C8-5BFF-4F2F-BB33-08CB6C57C105.png",
           "frame" : {
             "y" : 251,
             "x" : 130,
@@ -28,7 +28,7 @@ window.__imported__["onboarding/layers.json.js"] = [
           "width" : 381,
           "height" : 1
         },
-        "name" : "Welcome_Divider"
+        "name" : "WelcomeDivider"
       },
       {
         "maskFrame" : null,
@@ -1083,7 +1083,7 @@ window.__imported__["onboarding/layers.json.js"] = [
           "frame" : {
             "y" : 756,
             "x" : 14,
-            "width" : 29,
+            "width" : 619,
             "height" : 6
           }
         },
@@ -1091,7 +1091,7 @@ window.__imported__["onboarding/layers.json.js"] = [
         "layerFrame" : {
           "y" : 756,
           "x" : 14,
-          "width" : 29,
+          "width" : 619,
           "height" : 6
         },
         "name" : "TrackProgress"
@@ -1170,6 +1170,31 @@ window.__imported__["onboarding/layers.json.js"] = [
           "height" : 1136
         },
         "name" : "ShowTile"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "652AD97C-A743-46B8-890E-70144A208F09",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowTileDupe-652AD97C-A743-46B8-890E-70144A208F09.png",
+          "frame" : {
+            "y" : 0,
+            "x" : 0,
+            "width" : 640,
+            "height" : 1136
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 0,
+          "x" : 0,
+          "width" : 640,
+          "height" : 1136
+        },
+        "name" : "ShowTileDupe"
       },
       {
         "maskFrame" : null,

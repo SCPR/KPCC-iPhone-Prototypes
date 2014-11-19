@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 1416355789.222992
+# 1416376931.376067
 CACHE:
 /_server/server.js
 ../.temp.html
@@ -77,13 +77,14 @@ CACHE:
 ../imported/onboarding/images/RewindLabel-B05FC52B-01B6-4E5E-91FA-ADA6267F67A2.png
 ../imported/onboarding/images/Settings_2-378DD6CE-2DF7-4F38-A068-6E7489AC9DFF.png
 ../imported/onboarding/images/ShowTile-A0E26430-3CF7-482A-8385-7AB54A7786C7.png
+../imported/onboarding/images/ShowTileDupe-652AD97C-A743-46B8-890E-70144A208F09.png
 ../imported/onboarding/images/ShowTitle-792E8881-7939-4C2D-8B1D-9726B041A094.png
 ../imported/onboarding/images/ShowTitle-9631F49E-A235-4FF4-86E1-01120589E812.png
 ../imported/onboarding/images/The_Short_List-87B55714-B9F4-4520-892C-0D3EB8D28071.png
 ../imported/onboarding/images/topmenu-AF362B39-B2A7-4FD8-B4D1-06526CD4B1D6.png
 ../imported/onboarding/images/TrackProgress-396AC36C-B0FF-414C-A4E7-A03E4C415565.png
-../imported/onboarding/images/Welcome_Divider-F049D0C8-5BFF-4F2F-BB33-08CB6C57C105.png
 ../imported/onboarding/images/WelcomeCopy-B017FE1C-1ADB-4F72-A94C-314D19AC66F0.png
+../imported/onboarding/images/WelcomeDivider-F049D0C8-5BFF-4F2F-BB33-08CB6C57C105.png
 ../imported/onboarding/images/WelcomeLogo-05FC09DA-0370-4801-B86D-9C02E0D1BB97.png
 ../imported/onboarding/images/WelcomePlayBtnCircle-A107A37C-000D-407C-8CBB-A7BD1A9A331C.png
 ../imported/onboarding/images/WelcomePlayBtnTriangle-08C6385F-B038-4857-9CF8-B9543FFC226D.png
