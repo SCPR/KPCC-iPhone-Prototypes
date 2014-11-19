@@ -100,7 +100,6 @@
 
 }).call(this);
 
-// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.programs-prev-next.framer/imported/prev-next/layers.json.js
 window.__imported__ = window.__imported__ || {};
 window.__imported__["prev-next/layers.json.js"] = [
   {

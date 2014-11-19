@@ -100,8 +100,6 @@
 
 }).call(this);
 
-// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.live-rewind.framer/imported/.DS_Store/layers.json.js
-// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.live-rewind.framer/imported/live-rewind/layers.json.js
 window.__imported__ = window.__imported__ || {};
 window.__imported__["live-rewind/layers.json.js"] = [
   {
