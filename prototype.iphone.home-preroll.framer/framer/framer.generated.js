@@ -100,8 +100,6 @@
 
 }).call(this);
 
-// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.home-preroll.framer/imported/.DS_Store/layers.json.js
-// Layer info for /Users/sean/Desktop/prototypes/prototype.iphone.home-preroll.framer/imported/home/layers.json.js
 window.__imported__ = window.__imported__ || {};
 window.__imported__["home/layers.json.js"] = [
   {
