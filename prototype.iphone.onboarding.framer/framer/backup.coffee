@@ -120,7 +120,9 @@ onboarding.StatusBar.opacity = 0
 onboarding.HighlightPrograms.opacity = 0
 onboarding.HighlightHeadlines.opacity = 0
 onboarding.LensPrograms.opacity = 0
+onboarding.LensPrograms.scale = 0
 onboarding.LensHeadlines.opacity = 0
+onboarding.LensHeadlines.scale = 0
 
 # Push Onboarding elements
 onboarding.HintPush.opacity = 0
@@ -151,7 +153,7 @@ onboarding.WelcomePlayBtnCircle.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.WelcomePlayBtnCircle.states.animationOptions = {
-	curve: curve1
+  curve: curve1
 }
 
 # Welcome Play Button Triangle
@@ -161,7 +163,7 @@ onboarding.WelcomePlayBtnTriangle.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.WelcomePlayBtnTriangle.states.animationOptions = {
-	curve: curve1
+  curve: curve1
 }
 
 # Show Title
@@ -189,7 +191,7 @@ onboarding.RewindBtn.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.RewindBtn.states.animationOptions = {
-	curve: curve1
+  curve: curve1
 }
 
 # Rewinding Label
@@ -209,7 +211,7 @@ onboarding.LensMenu.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.LensMenu.states.animationOptions = {
-	curve: curve1
+  curve: curve1
 }
 
 # Rewind Lens
@@ -219,7 +221,7 @@ onboarding.LensRewind.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.LensRewind.states.animationOptions = {
-	curve: curve1
+  curve: curve1
 }
 
 # Spinner
@@ -234,7 +236,7 @@ onboarding.Spinner.states.animationOptions = {
 
 # UI Divider
 onboarding.DividerProgress.states.add({
-    engaged: {width:612, x: 14},
+    engaged: {opacity: 1, width:612, x: 14},
     initial: {opacity:1},
     dismiss: {opacity:0}
 })
@@ -281,12 +283,30 @@ onboarding.NavBarMenuBottom.states.animationOptions = {
 
 # Menu TableView
 onboarding.Menu.states.add({
-	initial: {y:-605},
-	engaged: {y:184},
+  initial: {y:-605},
+  engaged: {y:184},
 })
 onboarding.Menu.states.animationOptions = {
   curve: "ease-in-out",
   time: 0.3
+}
+
+# Programs Highlight
+onboarding.HighlightPrograms.states.add({
+    active: {opacity:1},
+    inactive: {opacity:0},
+})
+onboarding.HighlightPrograms.states.animationOptions = {
+  curve: curve1
+}
+
+# Programs Highlight
+onboarding.HighlightHeadlines.states.add({
+    active: {opacity:1},
+    inactive: {opacity:0},
+})
+onboarding.HighlightHeadlines.states.animationOptions = {
+  curve: curve1
 }
 
 ###############################
@@ -301,62 +321,62 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchStart, ->
 # Opening Welcome Sequence  
 # Add a cosmetic 1-sec delay for testing purposes
 Utils.delay 1, -> 
-	
-	onboarding.ShowTile.animate
-	  properties:
-	  	brightness: 80
-	  time: 0.75
-	  curve: "ease-in-out"
-	onboarding.ShowTileDupe.animate
-	  properties:
-	  	brightness: 80
-	  time: 0.75
-	  curve: "ease-in-out"
-	
-	# wait 0.4 secs after BG has faded in, then kick off the next sequence
-	Utils.delay 0.4, -> 
-		onboarding.WelcomeDivider.animate
-		  properties:
-		  	width: 380
-		  	x: 130
-		  time: 0.25
-		  curve: "ease-out"
-		
-		onboarding.WelcomeLogo.animate
-		  properties:
-		    opacity: 1 
-		    y: 172
-		  time: 0.25
-		  curve: curve2
-		
-		onboarding.WelcomeCopy.animate
-		  properties:
-		    opacity: 1 
-		    y: 282
-		  time: 0.25
-		  curve: curve2
-		
-		Utils.delay 1.5, ->
-			onboarding.WelcomePlayBtnCircle.animate
-				properties:
-				  scale: 1
-				time: 0.25
-				curve: curve2
-			
-			Utils.delay 0.1, ->
-				onboarding.WelcomePlayBtnTriangle.animate
-					properties:
-					  opacity: 1 
-					time: 0.8
-					curve: "ease-in-out"
-					
-				onboarding.WelcomePlayLabel.animate
-					properties:
-					  opacity: 1 
-					time: 0.8
-					curve: "ease-in-out"
-				
-				
+  
+  onboarding.ShowTile.animate
+    properties:
+      brightness: 80
+    time: 0.75
+    curve: "ease-in-out"
+  onboarding.ShowTileDupe.animate
+    properties:
+      brightness: 80
+    time: 0.75
+    curve: "ease-in-out"
+  
+  # wait 0.4 secs after BG has faded in, then kick off the next sequence
+  Utils.delay 0.4, -> 
+    onboarding.WelcomeDivider.animate
+      properties:
+        width: 380
+        x: 130
+      time: 0.25
+      curve: "ease-out"
+    
+    onboarding.WelcomeLogo.animate
+      properties:
+        opacity: 1 
+        y: 172
+      time: 0.25
+      curve: curve2
+    
+    onboarding.WelcomeCopy.animate
+      properties:
+        opacity: 1 
+        y: 282
+      time: 0.25
+      curve: curve2
+    
+    Utils.delay 1.5, ->
+      onboarding.WelcomePlayBtnCircle.animate
+        properties:
+          scale: 1
+        time: 0.25
+        curve: curve2
+      
+      Utils.delay 0.1, ->
+        onboarding.WelcomePlayBtnTriangle.animate
+          properties:
+            opacity: 1 
+          time: 0.8
+          curve: "ease-in-out"
+          
+        onboarding.WelcomePlayLabel.animate
+          properties:
+            opacity: 1 
+          time: 0.8
+          curve: "ease-in-out"
+        
+        
 # Kick off onboarding steps    
 onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
   onboarding.WelcomePlayBtnCircle.states.switch("initial")
@@ -373,80 +393,112 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
   
   onboarding.DividerProgress.states.switch("engaged")
   onboarding.NavBar.animate
-  	properties:
-  	  height: 119
-  	curve: curve2
+    properties:
+      height: 119
+    curve: curve2
   
   Utils.delay 0.3, ->
-  	onboarding.ShowTitle.fadeInSlow()
-  	onboarding.PauseBtn.fadeInSlow()
-  	onboarding.NavBarTitle.fadeInSlow()
-  	onboarding.StatusBar.fadeInSlow()
-  	onboarding.TrackProgress.animate
-  		properties:
-  			width: 150
-  		time:10
-  		curve: "linear"
-  	Utils.delay 10, ->
-    	onboarding.RewindBtn.animate
-    		properties:
-    			opacity: 1 
-    		time: 0.4
-    		curve: "ease-in-out"
+    onboarding.ShowTitle.fadeInSlow()
+    onboarding.PauseBtn.fadeInSlow()
+    onboarding.NavBarTitle.fadeInSlow()
+    onboarding.StatusBar.fadeInSlow()
+    onboarding.TrackProgress.animate
+      properties:
+        width: 150
+      time:10
+      curve: "linear"
+    Utils.delay 10, ->
+      onboarding.RewindBtn.animate
+        properties:
+          opacity: 1 
+        time: 0.4
+        curve: "ease-in-out"
 
-		
-		Utils.delay 12, ->
-			onboarding.RewindBtn.states.switch("press")
-			onboarding.LensRewind.states.switch("press")
-			
-			Utils.delay 0.3, ->
-				onboarding.RewindBtn.states.switch("initial")
-				onboarding.LensRewind.states.switch("initial")
-				onboarding.LensRewind.springOut()
-				onboarding.RewindBtn.fadeOut()
-				onboarding.RewindLabel.states.switch("engaged")
-				onboarding.Spinner.states.switch("engaged")
-				onboarding.ShowTile.states.switch("blur")
-				onboarding.PauseBtn.states.switch("dismiss")
-				onboarding.TrackProgress.animate
-					properties:
-						width: 10
-					time: 2.5
-					curve: "linear"
-									
-				Utils.delay 2.5, ->
-					onboarding.LensRewind.y = -100
-					onboarding.RewindLabel.states.switch("dismiss")
-					onboarding.Spinner.states.switch("dismiss")
-					onboarding.ShowTile.states.switch("infocus")
-					onboarding.PauseBtn.states.switch("initial")
-					onboarding.TrackProgress.animate
-						properties:
-							width: 250
-						time: 10
-						curve: "linear"
-						
-					Utils.delay 8, ->
-						onboarding.NavBarMenuTop.springIn()
-						onboarding.NavBarMenuMiddle.springIn()
-						onboarding.NavBarMenuBottom.springIn()
-						onboarding.LensMenu.springIn()
-						
-						Utils.delay 1, ->
-							onboarding.LensMenu.states.switch("press")
-							Utils.delay 0.3, ->
-								onboarding.LensMenu.states.switch("initial")
-								onboarding.ShowTile.states.switch("blur")
-								onboarding.PauseBtn.states.switch("dismiss")
-								onboarding.DividerProgress.states.switch("dismiss")
-								onboarding.TrackProgress.states.switch("dismiss")
-								onboarding.ShowTitle.states.switch("dismiss")
-								onboarding.NavBarMenuTop.states.switch("engaged")
-								onboarding.NavBarMenuMiddle.states.switch("engaged")
-								onboarding.NavBarMenuBottom.states.switch("engaged")
-								Utils.delay 0.1, ->
-									onboarding.Menu.states.switch("engaged")
-									onboarding.LensMenu.springOut()
-					
+    
+    Utils.delay 12, ->
+      onboarding.RewindBtn.states.switch("press")
+      onboarding.LensRewind.states.switch("press")
+      
+      Utils.delay 0.3, ->
+        onboarding.RewindBtn.states.switch("initial")
+        onboarding.LensRewind.states.switch("initial")
+        onboarding.LensRewind.springOut()
+        onboarding.RewindBtn.fadeOut()
+        onboarding.RewindLabel.states.switch("engaged")
+        onboarding.Spinner.states.switch("engaged")
+        onboarding.ShowTile.states.switch("blur")
+        onboarding.PauseBtn.states.switch("dismiss")
+        onboarding.TrackProgress.animate
+          properties:
+            width: 10
+          time: 2.5
+          curve: "linear"
+                  
+        Utils.delay 2.5, ->
+          onboarding.LensRewind.y = -100
+          onboarding.RewindLabel.states.switch("dismiss")
+          onboarding.Spinner.states.switch("dismiss")
+          onboarding.ShowTile.states.switch("infocus")
+          onboarding.PauseBtn.states.switch("initial")
+          onboarding.TrackProgress.animate
+            properties:
+              width: 250
+            time: 10
+            curve: "linear"
+            
+          Utils.delay 8, ->
+            onboarding.NavBarMenuTop.springIn()
+            onboarding.NavBarMenuMiddle.springIn()
+            onboarding.NavBarMenuBottom.springIn()
+            onboarding.LensMenu.springIn()
+            
+            Utils.delay 1, ->
+              onboarding.LensMenu.states.switch("press")
+              Utils.delay 0.3, ->
+                onboarding.LensMenu.states.switch("initial")
+                onboarding.ShowTile.states.switch("blur")
+                onboarding.PauseBtn.states.switch("dismiss")
+                onboarding.DividerProgress.states.switch("dismiss")
+                onboarding.TrackProgress.states.switch("dismiss")
+                onboarding.ShowTitle.states.switch("dismiss")
+                onboarding.NavBarMenuTop.states.switch("engaged")
+                onboarding.NavBarMenuMiddle.states.switch("engaged")
+                onboarding.NavBarMenuBottom.states.switch("engaged")
+                Utils.delay 0.1, ->
+                  onboarding.Menu.states.switch("engaged")
+                  onboarding.LensMenu.springOut()
+          
+          
+  Utils.delay 27, ->
+	  onboarding.LensPrograms.springIn()
+	  onboarding.HighlightPrograms.states.switch("active")
+	  Utils.delay 2, ->
+	    onboarding.LensPrograms.springOut()
+	    onboarding.HighlightPrograms.states.switch("inactive")
+	    Utils.delay 1, ->
+	      onboarding.LensHeadlines.springIn()
+	      onboarding.HighlightHeadlines.states.switch("active")
+	      Utils.delay 2, ->
+	        onboarding.LensHeadlines.springOut()
+	        onboarding.HighlightHeadlines.states.switch("inactive")
+	        Utils.delay 2, ->
+	          onboarding.Menu.states.switch("initial")
+	          Utils.delay 0.1, ->
+	            onboarding.ShowTile.states.switch("infocus")
+	            onboarding.PauseBtn.states.switch("initial")
+	            onboarding.DividerProgress.states.switch("engaged")
+	            onboarding.TrackProgress.states.switch("initial")
+	            onboarding.TrackProgress.width = 400
+	            onboarding.ShowTitle.states.switch("initial")
+	            onboarding.NavBarMenuTop.states.switch("initial")
+	            onboarding.NavBarMenuMiddle.states.switch("initial")
+	            onboarding.NavBarMenuBottom.states.switch("initial")
+	            Utils.delay 0.2, ->
+		            onboarding.TrackProgress.animate
+		            	properties:
+		            		width: 510
+		            	time: 5
+		            	curve: "linear"
+            
 onboarding.TrackProgress.on Events.AnimationEnd, ->
-	onboarding.LensRewind.springIn()
+  onboarding.LensRewind.springIn()
