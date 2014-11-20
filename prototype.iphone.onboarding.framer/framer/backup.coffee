@@ -164,6 +164,15 @@ onboarding.WelcomePlayBtnTriangle.states.animationOptions = {
 	curve: curve1
 }
 
+# Show Title
+onboarding.ShowTitle.states.add({
+    initial: {opacity:1},
+    dismiss: {opacity:0},
+})
+onboarding.ShowTitle.states.animationOptions = {
+  curve: curve1
+}
+
 # Pause Button
 onboarding.PauseBtn.states.add({
     initial: {opacity:1},
@@ -193,6 +202,25 @@ onboarding.RewindLabel.states.animationOptions = {
   time: 0.3
 }
 
+# Lens Menu
+onboarding.LensMenu.states.add({
+    initial: {scale:1, opacity:1, curve: curve1},
+    press:   {scale: 0.9, curve: curve1},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.LensMenu.states.animationOptions = {
+	curve: curve1
+}
+
+# Rewind Lens
+onboarding.LensRewind.states.add({
+    initial: {scale:1, opacity:1, curve: curve1},
+    press:   {scale: 0.9, curve: curve1},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.LensRewind.states.animationOptions = {
+	curve: curve1
+}
 
 # Spinner
 onboarding.Spinner.states.add({
@@ -206,13 +234,60 @@ onboarding.Spinner.states.animationOptions = {
 
 # UI Divider
 onboarding.DividerProgress.states.add({
-    engaged: {width:612, x: 14}
+    engaged: {width:612, x: 14},
+    initial: {opacity:1},
+    dismiss: {opacity:0}
 })
 onboarding.DividerProgress.states.animationOptions = {
   curve: "ease-out",
   time: 0.2
 }
 
+# TrackProgress
+onboarding.TrackProgress.states.add({
+    initial: {opacity:1},
+    dismiss: {opacity:0},
+})
+onboarding.TrackProgress.states.animationOptions = {
+  curve: curve1
+}
+
+# Hamburger Top
+onboarding.NavBarMenuTop.states.add({
+    initial: {y:63, rotation:0, originX:0, originY:0},
+    engaged: {y:61, rotation:45, originX:0, originY:0},
+})
+onboarding.NavBarMenuTop.states.animationOptions = {
+  curve: curve1
+}
+
+# Hamburger Middle
+onboarding.NavBarMenuMiddle.states.add({
+    initial: {opacity:1},
+    engaged: {opacity:0},
+})
+onboarding.NavBarMenuMiddle.states.animationOptions = {
+  curve: curve1
+}
+
+# Hamburger Bottom
+onboarding.NavBarMenuBottom.states.add({
+    initial: {y: 89, rotation:0, originX:0, originY:1},
+    engaged: {y:94, rotation:-45, originX:0, originY:1},
+})
+onboarding.NavBarMenuBottom.states.animationOptions = {
+  curve: curve1
+}
+
+# Menu TableView
+onboarding.Menu.states.add({
+	initial: {y:-605},
+	engaged: {y:184},
+})
+onboarding.Menu.states.animationOptions = {
+  curve: "ease-in-out",
+  time: 0.3
+}
 
 ###############################
 # Trigger animations
@@ -322,9 +397,11 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 		
 		Utils.delay 12, ->
 			onboarding.RewindBtn.states.switch("press")
+			onboarding.LensRewind.states.switch("press")
 			
 			Utils.delay 0.3, ->
 				onboarding.RewindBtn.states.switch("initial")
+				onboarding.LensRewind.states.switch("initial")
 				onboarding.LensRewind.springOut()
 				onboarding.RewindBtn.fadeOut()
 				onboarding.RewindLabel.states.switch("engaged")
@@ -353,9 +430,23 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 						onboarding.NavBarMenuTop.springIn()
 						onboarding.NavBarMenuMiddle.springIn()
 						onboarding.NavBarMenuBottom.springIn()
+						onboarding.LensMenu.springIn()
 						
 						Utils.delay 1, ->
-							onboarding.LensMenu.springIn()
+							onboarding.LensMenu.states.switch("press")
+							Utils.delay 0.3, ->
+								onboarding.LensMenu.states.switch("initial")
+								onboarding.ShowTile.states.switch("blur")
+								onboarding.PauseBtn.states.switch("dismiss")
+								onboarding.DividerProgress.states.switch("dismiss")
+								onboarding.TrackProgress.states.switch("dismiss")
+								onboarding.ShowTitle.states.switch("dismiss")
+								onboarding.NavBarMenuTop.states.switch("engaged")
+								onboarding.NavBarMenuMiddle.states.switch("engaged")
+								onboarding.NavBarMenuBottom.states.switch("engaged")
+								Utils.delay 0.1, ->
+									onboarding.Menu.states.switch("engaged")
+									onboarding.LensMenu.springOut()
 					
 onboarding.TrackProgress.on Events.AnimationEnd, ->
 	onboarding.LensRewind.springIn()
