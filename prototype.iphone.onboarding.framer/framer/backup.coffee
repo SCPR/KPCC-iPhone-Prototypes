@@ -130,6 +130,9 @@ onboarding.AlertPush.opacity = 0
 onboarding.PushBtnYes.opacity = 0
 onboarding.PushBtnNo.opacity = 0
 onboarding.PushAsk.opacity = 0
+onboarding.PushBtnYes.scale = 0
+onboarding.PushBtnNo.scale = 0
+onboarding.PushAsk.scale = 0
 
 
 ###############################
@@ -300,13 +303,42 @@ onboarding.HighlightPrograms.states.animationOptions = {
   curve: curve1
 }
 
-# Programs Highlight
+# Headlines Highlight
 onboarding.HighlightHeadlines.states.add({
     active: {opacity:1},
     inactive: {opacity:0},
 })
 onboarding.HighlightHeadlines.states.animationOptions = {
   curve: curve1
+}
+
+# Push Yes
+onboarding.PushBtnYes.states.add({
+    initial: {scale:1, opacity:1, curve: curve1},
+    press:   {scale: 0.95, curve: curve1},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.PushBtnYes.states.animationOptions = {
+  curve: curve2
+}
+
+# Push No
+onboarding.PushBtnNo.states.add({
+    initial: {scale:1, opacity:1, curve: curve1},
+    press:   {scale: 0.95, curve: curve1},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.PushBtnNo.states.animationOptions = {
+  curve: curve2
+}
+
+# Push Ask
+onboarding.PushAsk.states.add({
+    initial: {scale:1, opacity:1, curve: curve2},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.PushAsk.states.animationOptions = {
+  curve: curve2
 }
 
 ###############################
@@ -493,12 +525,29 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 	            onboarding.NavBarMenuTop.states.switch("initial")
 	            onboarding.NavBarMenuMiddle.states.switch("initial")
 	            onboarding.NavBarMenuBottom.states.switch("initial")
-	            Utils.delay 0.2, ->
-		            onboarding.TrackProgress.animate
+	            Utils.delay 1, ->
+	            	onboarding.NavBarMenuTop.springOut()
+	            	onboarding.NavBarMenuMiddle.springOut()
+	            	onboarding.NavBarMenuBottom.springOut()
+		        	onboarding.TrackProgress.animate
 		            	properties:
-		            		width: 510
-		            	time: 5
+		            		width: 500
+		            	time: 7
 		            	curve: "linear"
+		          	Utils.delay 7, ->
+		          		onboarding.ShowTile.states.switch("blur")
+		          		onboarding.PauseBtn.states.switch("dismiss")
+		          		onboarding.DividerProgress.states.switch("dismiss")
+		          		onboarding.TrackProgress.states.switch("dismiss")
+		          		onboarding.ShowTitle.states.switch("dismiss")
+		          		Utils.delay 0.7, ->
+		          			onboarding.PushBtnYes.states.switch("initial")
+		          			onboarding.PushBtnNo.states.switch("initial")
+		          			onboarding.PushAsk.states.switch("initial")
             
+onboarding.PushBtnYes.on Events.AnimationEnd, ->
+	onboarding.PushBtnYes.states.switch("initial")            
+
+
 onboarding.TrackProgress.on Events.AnimationEnd, ->
   onboarding.LensRewind.springIn()
