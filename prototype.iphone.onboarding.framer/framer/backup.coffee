@@ -36,6 +36,12 @@ Layer::fadeOut = ->
             opacity: 0
             scale: 0
         curve: curve1
+ 
+ Layer::fadeOutSlow = ->
+    this.animate
+        properties: 
+            opacity: 0
+        curve: curve2
 
 Layer::fadeInFast = ->
     this.animate
@@ -69,6 +75,15 @@ Layer::springOut = ->
 ###############################
 # Set up initial layer states
 ###############################
+
+# Create Parent Layer for Push Ask
+onboarding.pushCanvas = new Layer
+  x:0, y:0, width:640, height:1136, backgroundColor: "transparent", opacity: 0, scale: 0
+
+# Make layers subLayers of pushCanvas
+onboarding.pushCanvas.addSubLayer(onboarding.PushAsk)
+onboarding.pushCanvas.addSubLayer(onboarding.PushBtnYes)
+onboarding.pushCanvas.addSubLayer(onboarding.PushBtnNo)
 
 # Onboarding BG Tile
 onboarding.ShowTile.blur = 20
@@ -127,12 +142,6 @@ onboarding.LensHeadlines.scale = 0
 # Push Onboarding elements
 onboarding.HintPush.opacity = 0
 onboarding.AlertPush.opacity = 0
-onboarding.PushBtnYes.opacity = 0
-onboarding.PushBtnNo.opacity = 0
-onboarding.PushAsk.opacity = 0
-onboarding.PushBtnYes.scale = 0
-onboarding.PushBtnNo.scale = 0
-onboarding.PushAsk.scale = 0
 
 
 ###############################
@@ -319,7 +328,7 @@ onboarding.PushBtnYes.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.PushBtnYes.states.animationOptions = {
-  curve: curve2
+  curve: curve1
 }
 
 # Push No
@@ -329,15 +338,33 @@ onboarding.PushBtnNo.states.add({
     dismiss: {scale:0, opacity:0},
 })
 onboarding.PushBtnNo.states.animationOptions = {
+  curve: curve1
+}
+
+# Push Canvas
+onboarding.pushCanvas.states.add({
+    engaged: {scale:1, opacity:1, curve: curve2},
+    dismiss: {scale:0, opacity:0},
+})
+onboarding.pushCanvas.states.animationOptions = {
   curve: curve2
 }
 
-# Push Ask
-onboarding.PushAsk.states.add({
-    initial: {scale:1, opacity:1, curve: curve2},
-    dismiss: {scale:0, opacity:0},
+# Push Alert
+onboarding.AlertPush.states.add({
+    engaged: {opacity:1},
+    dismiss: {opacity:0},
 })
-onboarding.PushAsk.states.animationOptions = {
+onboarding.AlertPush.states.animationOptions = {
+  curve: curve2
+}
+
+# Push Hint
+onboarding.HintPush.states.add({
+    engaged: {opacity:1},
+    dismiss: {opacity:0},
+})
+onboarding.HintPush.states.animationOptions = {
   curve: curve2
 }
 
@@ -349,6 +376,14 @@ onboarding.PushAsk.states.animationOptions = {
 onboarding.WelcomePlayBtnCircle.on Events.TouchStart, ->
   onboarding.WelcomePlayBtnCircle.states.switch("press")
   onboarding.WelcomePlayBtnTriangle.states.switch("press")
+
+# Make Push Notifications "Yes" button respond to touch
+onboarding.PushBtnYes.on Events.TouchStart, ->
+  onboarding.PushBtnYes.states.switch("press")
+
+# Make Push Notifications "No" button respond to touch
+onboarding.PushBtnNo.on Events.TouchStart, ->
+  onboarding.PushBtnNo.states.switch("press")
 
 # Opening Welcome Sequence  
 # Add a cosmetic 1-sec delay for testing purposes
@@ -467,7 +502,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
           curve: "linear"
                   
         Utils.delay 2.5, ->
-          onboarding.LensRewind.y = -100
+          onboarding.LensRewind.y = -120
           onboarding.RewindLabel.states.switch("dismiss")
           onboarding.Spinner.states.switch("dismiss")
           onboarding.ShowTile.states.switch("infocus")
@@ -525,7 +560,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 	            onboarding.NavBarMenuTop.states.switch("initial")
 	            onboarding.NavBarMenuMiddle.states.switch("initial")
 	            onboarding.NavBarMenuBottom.states.switch("initial")
-	            Utils.delay 1, ->
+	            Utils.delay 0.4, ->
 	            	onboarding.NavBarMenuTop.springOut()
 	            	onboarding.NavBarMenuMiddle.springOut()
 	            	onboarding.NavBarMenuBottom.springOut()
@@ -540,14 +575,43 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 		          		onboarding.DividerProgress.states.switch("dismiss")
 		          		onboarding.TrackProgress.states.switch("dismiss")
 		          		onboarding.ShowTitle.states.switch("dismiss")
-		          		Utils.delay 0.7, ->
-		          			onboarding.PushBtnYes.states.switch("initial")
-		          			onboarding.PushBtnNo.states.switch("initial")
-		          			onboarding.PushAsk.states.switch("initial")
+		          		Utils.delay 0.3, ->
+		          			onboarding.pushCanvas.states.switch("engaged")
             
-onboarding.PushBtnYes.on Events.AnimationEnd, ->
-	onboarding.PushBtnYes.states.switch("initial")            
+onboarding.PushBtnYes.on Events.TouchEnd, ->
+	onboarding.PushBtnYes.states.switch("initial")
+	Utils.delay 0.2, ->
+		onboarding.pushCanvas.states.switch("dismiss")
+		Utils.delay 0.2, ->
+			onboarding.AlertPush.states.switch("engaged")
+			onboarding.HintPush.states.switch("engaged")
 
+onboarding.AlertPush.on Events.TouchEnd, ->
+	onboarding.AlertPush.states.switch("dismiss")
+	onboarding.HintPush.states.switch("dismiss")
+	onboarding.ShowTile.states.switch("infocus")
+	onboarding.PauseBtn.states.switch("initial")
+	onboarding.DividerProgress.states.switch("engaged")
+	onboarding.TrackProgress.states.switch("initial")
+	onboarding.ShowTitle.states.switch("initial")
+	onboarding.TrackProgress.animate
+         	properties:
+         		width: 610
+         	time: 4
+         	curve: "linear"
+    Utils.delay 4, ->
+    	onboarding.PauseBtn.opacity = 0
+		onboarding.TrackProgress.fadeOutSlow()
+		onboarding.DividerProgress.fadeOutSlow()
+		onboarding.ShowTile.fadeOutSlow()
+		onboarding.ShowTileDupe.fadeOutSlow()
+		onboarding.ShowTitle.fadeOutSlow()
+		onboarding.NavBar.fadeOutSlow()
+		onboarding.NavBarTitle.fadeOutSlow()
+		onboarding.StatusBar.fadeOutSlow()
+
+onboarding.PushBtnNo.on Events.TouchEnd, ->
+	onboarding.PushBtnNo.states.switch("initial")
 
 onboarding.TrackProgress.on Events.AnimationEnd, ->
   onboarding.LensRewind.springIn()
