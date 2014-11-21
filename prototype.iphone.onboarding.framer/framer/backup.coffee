@@ -77,13 +77,13 @@ Layer::springOut = ->
 ###############################
 
 # Create Parent Layer for Push Ask
-onboarding.pushCanvas = new Layer
-  x:0, y:0, width:640, height:1136, backgroundColor: "transparent", opacity: 0, scale: 0
+# onboarding.pushCanvas = new Layer
+#   x:0, y:0, width:640, height:1136, backgroundColor: "transparent", opacity: 0, scale: 0, z: 500
 
 # Make layers subLayers of pushCanvas
-onboarding.pushCanvas.addSubLayer(onboarding.PushAsk)
-onboarding.pushCanvas.addSubLayer(onboarding.PushBtnYes)
-onboarding.pushCanvas.addSubLayer(onboarding.PushBtnNo)
+# onboarding.pushCanvas.addSubLayer(onboarding.PushAsk)
+# onboarding.pushCanvas.addSubLayer(onboarding.PushBtnYes)
+# onboarding.pushCanvas.addSubLayer(onboarding.PushBtnNo)
 
 # Onboarding BG Tile
 onboarding.ShowTile.blur = 20
@@ -142,6 +142,12 @@ onboarding.LensHeadlines.scale = 0
 # Push Onboarding elements
 onboarding.HintPush.opacity = 0
 onboarding.AlertPush.opacity = 0
+onboarding.PushAsk.opacity = 0
+onboarding.PushBtnNo.opacity = 0
+onboarding.PushBtnYes.opacity = 0
+onboarding.PushAsk.scale = 0
+onboarding.PushBtnNo.scale = 0
+onboarding.PushBtnYes.scale = 0
 
 
 ###############################
@@ -323,7 +329,7 @@ onboarding.HighlightHeadlines.states.animationOptions = {
 
 # Push Yes
 onboarding.PushBtnYes.states.add({
-    initial: {scale:1, opacity:1, curve: curve1},
+    engaged: {scale:1, opacity:1, curve: curve1},
     press:   {scale: 0.95, curve: curve1},
     dismiss: {scale:0, opacity:0},
 })
@@ -333,7 +339,7 @@ onboarding.PushBtnYes.states.animationOptions = {
 
 # Push No
 onboarding.PushBtnNo.states.add({
-    initial: {scale:1, opacity:1, curve: curve1},
+    engaged: {scale:1, opacity:1, curve: curve1},
     press:   {scale: 0.95, curve: curve1},
     dismiss: {scale:0, opacity:0},
 })
@@ -341,12 +347,12 @@ onboarding.PushBtnNo.states.animationOptions = {
   curve: curve1
 }
 
-# Push Canvas
-onboarding.pushCanvas.states.add({
+# Push Ask
+onboarding.PushAsk.states.add({
     engaged: {scale:1, opacity:1, curve: curve2},
     dismiss: {scale:0, opacity:0},
 })
-onboarding.pushCanvas.states.animationOptions = {
+onboarding.PushAsk.states.animationOptions = {
   curve: curve2
 }
 
@@ -576,12 +582,16 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 		          		onboarding.TrackProgress.states.switch("dismiss")
 		          		onboarding.ShowTitle.states.switch("dismiss")
 		          		Utils.delay 0.3, ->
-		          			onboarding.pushCanvas.states.switch("engaged")
+		          			onboarding.PushAsk.states.switch("engaged")
+		          			onboarding.PushBtnNo.states.switch("engaged")
+		          			onboarding.PushBtnYes.states.switch("engaged")
             
 onboarding.PushBtnYes.on Events.TouchEnd, ->
-	onboarding.PushBtnYes.states.switch("initial")
+	onboarding.PushBtnYes.states.switch("engaged")
 	Utils.delay 0.2, ->
-		onboarding.pushCanvas.states.switch("dismiss")
+		onboarding.PushAsk.states.switch("dismiss")
+		onboarding.PushBtnNo.states.switch("dismiss")
+		onboarding.PushBtnYes.states.switch("dismiss")
 		Utils.delay 0.2, ->
 			onboarding.AlertPush.states.switch("engaged")
 			onboarding.HintPush.states.switch("engaged")
@@ -595,12 +605,12 @@ onboarding.AlertPush.on Events.TouchEnd, ->
 	onboarding.TrackProgress.states.switch("initial")
 	onboarding.ShowTitle.states.switch("initial")
 	onboarding.TrackProgress.animate
-         	properties:
-         		width: 610
-         	time: 4
-         	curve: "linear"
-    Utils.delay 4, ->
-    	onboarding.PauseBtn.opacity = 0
+		properties:
+         width: 610
+        time: 4
+        curve: "linear"
+  Utils.delay 4, ->
+    onboarding.PauseBtn.fadeOutSlow()
 		onboarding.TrackProgress.fadeOutSlow()
 		onboarding.DividerProgress.fadeOutSlow()
 		onboarding.ShowTile.fadeOutSlow()
@@ -611,7 +621,7 @@ onboarding.AlertPush.on Events.TouchEnd, ->
 		onboarding.StatusBar.fadeOutSlow()
 
 onboarding.PushBtnNo.on Events.TouchEnd, ->
-	onboarding.PushBtnNo.states.switch("initial")
+  onboarding.PushBtnNo.states.switch("engaged")
 
 onboarding.TrackProgress.on Events.AnimationEnd, ->
   onboarding.LensRewind.springIn()
