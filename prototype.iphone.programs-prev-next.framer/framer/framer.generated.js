@@ -600,7 +600,7 @@ window.__imported__["prev-next/layers.json.js"] = [
   }
 ]
 window.Framer.Defaults.DeviceView = {
-  "deviceScale" : -1,
+  "deviceScale" : 1,
   "orientation" : 0,
   "contentScale" : 1,
   "deviceType" : "iphone-5s-silver"

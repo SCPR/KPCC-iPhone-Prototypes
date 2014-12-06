@@ -23,6 +23,7 @@ Framer.Device.background.image = "http://a.scpr.org/i/7a376d4259ccd459d68495f8ee
 # Set up initial layer states
 ###############################
 
+prevNext.ShowTile.y = 100
 prevNext.PrevTrackProgress.opacity = 0
 prevNext.NextTrackProgress.opacity = 0
 prevNext.NextEpisodeTitle.x = 650 

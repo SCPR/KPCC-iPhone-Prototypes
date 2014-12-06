@@ -1,9 +1,13 @@
 CACHE MANIFEST
-# 1416611802.997999
+# 1417823577.454971
 CACHE:
 /_server/server.js
 ../.temp.html
 ../app.coffee
+../audio/.DS_Store
+../audio/onboarding-bed.wav
+../audio/onboarding-outro.wav
+../audio/onboarding.wav
 ../framer/.bowerrc
 ../framer/app.manifest
 ../framer/backup.coffee

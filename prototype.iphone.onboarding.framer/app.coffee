@@ -195,7 +195,9 @@ onboarding.ShowTitle.states.animationOptions = {
 
 # Pause Button
 onboarding.PauseBtn.states.add({
-    initial: {opacity:1},
+    initial: {opacity:1, scale:1},
+    press:   {scale: 0.9, curve: curve1},
+    unpress: {scale:1, opacity:1, curve: curve1},
     dismiss: {opacity:0},
 })
 onboarding.PauseBtn.states.animationOptions = {
@@ -452,6 +454,9 @@ Utils.delay 1, ->
         
 # Kick off onboarding steps    
 onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
+  document.getElementById("onboarding").play()
+  document.getElementById("onboarding-bed").volume=.5
+  document.getElementById("onboarding-bed").play()
   onboarding.WelcomePlayBtnCircle.states.switch("initial")
   onboarding.WelcomePlayBtnTriangle.states.switch("initial")
   
@@ -478,9 +483,13 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
     onboarding.TrackProgress.animate
       properties:
         width: 150
-      time:10
+      time:15
       curve: "linear"
-    Utils.delay 10, ->
+    Utils.delay 8.5, ->
+    	onboarding.PauseBtn.states.switch("press")
+    Utils.delay 9, ->
+    	onboarding.PauseBtn.states.switch("unpress")
+    Utils.delay 15, ->
       onboarding.RewindBtn.animate
         properties:
           opacity: 1 
@@ -488,7 +497,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
         curve: "ease-in-out"
 
     
-    Utils.delay 12, ->
+    Utils.delay 17, ->
       onboarding.RewindBtn.states.switch("press")
       onboarding.LensRewind.states.switch("press")
       
@@ -519,7 +528,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
             time: 10
             curve: "linear"
             
-          Utils.delay 8, ->
+          Utils.delay 0.5, ->
             onboarding.NavBarMenuTop.springIn()
             onboarding.NavBarMenuMiddle.springIn()
             onboarding.NavBarMenuBottom.springIn()
@@ -542,19 +551,19 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
                   onboarding.LensMenu.springOut()
           
           
-  Utils.delay 27, ->
+  Utils.delay 22.5, ->
 	  onboarding.LensPrograms.springIn()
 	  onboarding.HighlightPrograms.states.switch("active")
-	  Utils.delay 2, ->
+	  Utils.delay 2.5, ->
 	    onboarding.LensPrograms.springOut()
 	    onboarding.HighlightPrograms.states.switch("inactive")
 	    Utils.delay 1, ->
 	      onboarding.LensHeadlines.springIn()
 	      onboarding.HighlightHeadlines.states.switch("active")
-	      Utils.delay 2, ->
+	      Utils.delay 3, ->
 	        onboarding.LensHeadlines.springOut()
 	        onboarding.HighlightHeadlines.states.switch("inactive")
-	        Utils.delay 2, ->
+	        Utils.delay 1, ->
 	          onboarding.Menu.states.switch("initial")
 	          Utils.delay 0.1, ->
 	            onboarding.ShowTile.states.switch("infocus")
@@ -573,9 +582,9 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 		        	onboarding.TrackProgress.animate
 		            	properties:
 		            		width: 500
-		            	time: 7
+		            	time: 5
 		            	curve: "linear"
-		          	Utils.delay 7, ->
+		          	Utils.delay 5, ->
 		          		onboarding.ShowTile.states.switch("blur")
 		          		onboarding.PauseBtn.states.switch("dismiss")
 		          		onboarding.DividerProgress.states.switch("dismiss")
@@ -597,6 +606,7 @@ onboarding.PushBtnYes.on Events.TouchEnd, ->
 			onboarding.HintPush.states.switch("engaged")
 
 onboarding.AlertPush.on Events.TouchEnd, ->
+	document.getElementById("onboarding-outro").play()
 	onboarding.AlertPush.states.switch("dismiss")
 	onboarding.HintPush.states.switch("dismiss")
 	onboarding.ShowTile.states.switch("infocus")
@@ -610,15 +620,25 @@ onboarding.AlertPush.on Events.TouchEnd, ->
         time: 4
         curve: "linear"
     Utils.delay 4, ->
-		onboarding.TrackProgress.fadeOutSlow()
-		onboarding.DividerProgress.fadeOutSlow()
-		onboarding.ShowTile.fadeOutSlow()
-		onboarding.ShowTileDupe.fadeOutSlow()
-		onboarding.ShowTitle.fadeOutSlow()
-		onboarding.NavBar.fadeOutSlow()
-		onboarding.NavBarTitle.fadeOutSlow()
-		onboarding.StatusBar.fadeOutSlow()
-		onboarding.PauseBtn.fadeOutSlow()
+    	document.getElementById("onboarding-bed").pause()
+    	document.getElementById("onboarding-outro").pause()
+#     	onboarding.TrackProgress.fadeOutSlow()
+# 		onboarding.DividerProgress.fadeOutSlow()
+# 		onboarding.ShowTile.fadeOutSlow()
+# 		onboarding.ShowTileDupe.fadeOutSlow()
+# 		onboarding.ShowTitle.fadeOutSlow()
+# 		onboarding.NavBar.fadeOutSlow()
+# 		onboarding.NavBarTitle.fadeOutSlow()
+#     Utils.delay 4, ->
+#     	onboarding.TrackProgress.fadeOutSlow()
+# 		onboarding.DividerProgress.fadeOutSlow()
+# 		onboarding.ShowTile.fadeOutSlow()
+# 		onboarding.ShowTileDupe.fadeOutSlow()
+# 		onboarding.ShowTitle.fadeOutSlow()
+# 		onboarding.NavBar.fadeOutSlow()
+# 		onboarding.NavBarTitle.fadeOutSlow()
+# 		onboarding.StatusBar.fadeOutSlow()
+# 		onboarding.PauseBtn.fadeOutSlow()
 
 onboarding.PushBtnNo.on Events.TouchEnd, ->
   onboarding.PushBtnNo.states.switch("engaged")
