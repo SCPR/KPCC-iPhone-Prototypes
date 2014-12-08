@@ -190,5 +190,5 @@ liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
 	  	liveRewind.Spinner.states.switch("dismiss")
 	  	Utils.delay 1, ->
 		  	document.getElementById("stream").play()
-	  ), 2800
+	  ), 2500
 	
