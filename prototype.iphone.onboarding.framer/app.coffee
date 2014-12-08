@@ -455,7 +455,7 @@ Utils.delay 1, ->
 # Kick off onboarding steps    
 onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
   document.getElementById("onboarding").play()
-  document.getElementById("onboarding-bed").volume=.5
+  document.getElementById("onboarding-bed").volume=.4
   document.getElementById("onboarding-bed").play()
   onboarding.WelcomePlayBtnCircle.states.switch("initial")
   onboarding.WelcomePlayBtnTriangle.states.switch("initial")
@@ -563,7 +563,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
 	      Utils.delay 3, ->
 	        onboarding.LensHeadlines.springOut()
 	        onboarding.HighlightHeadlines.states.switch("inactive")
-	        Utils.delay 1, ->
+	        Utils.delay 0.5, ->
 	          onboarding.Menu.states.switch("initial")
 	          Utils.delay 0.1, ->
 	            onboarding.ShowTile.states.switch("infocus")

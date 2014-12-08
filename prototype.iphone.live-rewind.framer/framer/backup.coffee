@@ -160,7 +160,8 @@ liveRewind.LiveRewindLabel.on Events.TouchStart, ->
 # Kick off preroll animation sequence    
 liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
   liveRewind.LiveRewindLabel.states.switch("initial")
-  # Play button pressed: load preroll and drop into live stream
+  # Play button pressed: load ui sound and drop into live stream
+  document.getElementById("ui-sound").play()
   liveRewind.ShowTIle.states.switch("blur")
   liveRewind.ShowTitleInitial.states.switch("dismiss")
   liveRewind.PlayBtn.states.switch("dismiss")
@@ -187,6 +188,7 @@ liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
 	  	liveRewind.PauseBtn.states.switch("engaged")
 	  	liveRewind.PauseRects.states.switch("engaged")
 	  	liveRewind.Spinner.states.switch("dismiss")
-	  	document.getElementById("stream").play()
-	  ), 3500
+	  	Utils.delay 1, ->
+		  	document.getElementById("stream").play()
+	  ), 2800
 	

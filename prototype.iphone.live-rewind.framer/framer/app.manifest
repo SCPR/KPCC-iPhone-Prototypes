@@ -1,9 +1,11 @@
 CACHE MANIFEST
-# 1413413960.408884
+# 1418060034.995547
 CACHE:
 /_server/server.js
 ../.DS_Store
+../.temp.html
 ../app.coffee
+../audio/live-rewind1.mp3
 ../framer/.bowerrc
 ../framer/app.manifest
 ../framer/backup.coffee
@@ -18,7 +20,16 @@ CACHE:
 ../framer/images/icon-120.png
 ../framer/images/icon-152.png
 ../framer/images/icon-76.png
+../framer/images/icon-arrow.png
+../framer/images/icon-arrow@2x.png
+../framer/images/icon-close.png
+../framer/images/icon-close@2x.png
+../framer/images/icon-framer.png
+../framer/images/icon-framer@2x.png
+../framer/images/icon-share.png
+../framer/images/icon-share@2x.png
 ../framer/init.js
+../framer/mirror.css
 ../framer/style.css
 ../framer/version
 ../images/framer-icon.png
