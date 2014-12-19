@@ -1,11 +1,12 @@
 CACHE MANIFEST
-# 1418060709.688032
+# 1418949012.148786
 CACHE:
 /_server/server.js
 ../.DS_Store
 ../.temp.html
 ../app.coffee
-../audio/live-rewind1.mp3
+../audio/.DS_Store
+../audio/live-rewind2.mp3
 ../framer/.bowerrc
 ../framer/app.manifest
 ../framer/backup.coffee
@@ -35,12 +36,13 @@ CACHE:
 ../images/framer-icon.png
 ../imported/.DS_Store
 ../imported/live-rewind/images/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png
+../imported/live-rewind/images/Elapsed-CF1E0186-467E-4F1D-B6AF-E344D5EEA458.png
 ../imported/live-rewind/images/LiveRewindLabel-147238C2-E4D7-4AEE-8E3F-FFAF27EAE107.png
 ../imported/live-rewind/images/Navbar-AC8C33DE-82A1-428F-B26D-09A41C4DD7AE.png
 ../imported/live-rewind/images/PauseBtn-7CB212C5-2C0E-417D-8311-9EB5473181C7.png
 ../imported/live-rewind/images/PauseRects-799B2922-0BC5-465C-A025-3F20CB41BEEE.png
 ../imported/live-rewind/images/PlayBtn-542464A4-5D51-4060-B9D6-9954ABD30311.png
-../imported/live-rewind/images/Progress-CF1E0186-467E-4F1D-B6AF-E344D5EEA458.png
+../imported/live-rewind/images/Progress-83FB0FC3-3968-4D4C-9545-599E4D4AF510.png
 ../imported/live-rewind/images/ShowTIle-1225E6EC-C7C0-49C9-A4EA-74DCEC2D3AC5.png
 ../imported/live-rewind/images/ShowTitleEngaged-A7E14A90-65E7-4966-916B-4DF3618F2925.png
 ../imported/live-rewind/images/ShowTitleInitial-463557FD-E58F-4D86-8326-0AA51A1B7D0C.png

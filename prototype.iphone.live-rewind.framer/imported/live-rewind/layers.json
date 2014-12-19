@@ -179,30 +179,55 @@
       },
       {
         "maskFrame" : null,
+        "id" : "CF1E0186-467E-4F1D-B6AF-E344D5EEA458",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/Elapsed-CF1E0186-467E-4F1D-B6AF-E344D5EEA458.png",
+          "frame" : {
+            "y" : 754,
+            "x" : 14,
+            "width" : 237,
+            "height" : 6
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 754,
+          "x" : 14,
+          "width" : 237,
+          "height" : 6
+        },
+        "name" : "Elapsed"
+      },
+      {
+        "maskFrame" : null,
         "id" : "A00557E5-465F-48E8-987B-4621EE7EFD61",
         "visible" : true,
         "children" : [
           {
             "maskFrame" : null,
-            "id" : "CF1E0186-467E-4F1D-B6AF-E344D5EEA458",
+            "id" : "83FB0FC3-3968-4D4C-9545-599E4D4AF510",
             "visible" : true,
             "children" : [
 
             ],
             "image" : {
-              "path" : "images\/Progress-CF1E0186-467E-4F1D-B6AF-E344D5EEA458.png",
+              "path" : "images\/Progress-83FB0FC3-3968-4D4C-9545-599E4D4AF510.png",
               "frame" : {
-                "y" : 756,
+                "y" : 754,
                 "x" : 14,
-                "width" : 17,
+                "width" : 237,
                 "height" : 6
               }
             },
             "imageType" : "png",
             "layerFrame" : {
-              "y" : 756,
+              "y" : 754,
               "x" : 14,
-              "width" : 17,
+              "width" : 237,
               "height" : 6
             },
             "name" : "Progress"
@@ -211,18 +236,18 @@
         "image" : {
           "path" : "images\/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png",
           "frame" : {
-            "y" : 756,
+            "y" : 754,
             "x" : 14,
             "width" : 612,
-            "height" : 6
+            "height" : 8
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 756,
+          "y" : 754,
           "x" : 14,
           "width" : 612,
-          "height" : 6
+          "height" : 8
         },
         "name" : "DividerProgress"
       },
@@ -237,17 +262,17 @@
           "path" : "images\/ShowTitleRewinding-950D77C0-5393-4C4C-B492-C0A78404DFBB.png",
           "frame" : {
             "y" : 608,
-            "x" : 38,
-            "width" : 564,
-            "height" : 99
+            "x" : 241,
+            "width" : 164,
+            "height" : 20
           }
         },
         "imageType" : "png",
         "layerFrame" : {
           "y" : 608,
-          "x" : 38,
-          "width" : 564,
-          "height" : 99
+          "x" : 241,
+          "width" : 164,
+          "height" : 20
         },
         "name" : "ShowTitleRewinding"
       },
@@ -262,17 +287,17 @@
           "path" : "images\/ShowTitleEngaged-A7E14A90-65E7-4966-916B-4DF3618F2925.png",
           "frame" : {
             "y" : 608,
-            "x" : 38,
-            "width" : 564,
-            "height" : 99
+            "x" : 167,
+            "width" : 307,
+            "height" : 109
           }
         },
         "imageType" : "png",
         "layerFrame" : {
           "y" : 608,
-          "x" : 38,
-          "width" : 564,
-          "height" : 99
+          "x" : 167,
+          "width" : 307,
+          "height" : 109
         },
         "name" : "ShowTitleEngaged"
       },
@@ -287,17 +312,17 @@
           "path" : "images\/ShowTitleInitial-463557FD-E58F-4D86-8326-0AA51A1B7D0C.png",
           "frame" : {
             "y" : 369,
-            "x" : 38,
-            "width" : 564,
-            "height" : 99
+            "x" : 175,
+            "width" : 293,
+            "height" : 109
           }
         },
         "imageType" : "png",
         "layerFrame" : {
           "y" : 369,
-          "x" : 38,
-          "width" : 564,
-          "height" : 99
+          "x" : 175,
+          "width" : 293,
+          "height" : 109
         },
         "name" : "ShowTitleInitial"
       },

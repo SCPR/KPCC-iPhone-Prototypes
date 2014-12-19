@@ -29,9 +29,10 @@ liveRewind.PauseRects.opacity = 0
 liveRewind.PauseRects.scale = 0
 liveRewind.DividerProgress.width = 0
 liveRewind.DividerProgress.x = 320
-liveRewind.Progress.width = 0
+liveRewind.Progress.opacity = 0
 liveRewind.PauseBtn.opacity = 0
 liveRewind.Spinner.opacity = 0
+liveRewind.Elapsed.opacity = 0
 
 ###############################
 # Set some animation styles
@@ -176,12 +177,14 @@ liveRewind.LiveRewindLabel.on Events.TouchEnd, ->
 	curve: "ease-out"
 	
 	liveRewind.DividerProgress.on Events.AnimationEnd, ->
-	  setTimeout ( ->
-	  	liveRewind.Progress.animate
+	  liveRewind.Elapsed.opacity = 1
+	  liveRewind.Progress.opacity = 1
+	  liveRewind.Elapsed.animate
 	      properties:
 	          width:10
 	      curve: "ease-out",
-	      time: 0.3
+	      time: 2.5
+	  setTimeout ( ->
 	  	liveRewind.ShowTIle.states.switch("initial")
 	  	liveRewind.ShowTitleRewinding.opacity = 0
 	  	liveRewind.ShowTitleEngaged.opacity = 1
