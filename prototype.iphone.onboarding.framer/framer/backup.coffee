@@ -497,7 +497,7 @@ onboarding.WelcomePlayBtnCircle.on Events.TouchEnd, ->
         curve: "ease-in-out"
 
     
-    Utils.delay 17, ->
+    Utils.delay 16.5, ->
       onboarding.RewindBtn.states.switch("press")
       onboarding.LensRewind.states.switch("press")
       
@@ -622,23 +622,16 @@ onboarding.AlertPush.on Events.TouchEnd, ->
     Utils.delay 4, ->
     	document.getElementById("onboarding-bed").pause()
     	document.getElementById("onboarding-outro").pause()
-#     	onboarding.TrackProgress.fadeOutSlow()
-# 		onboarding.DividerProgress.fadeOutSlow()
-# 		onboarding.ShowTile.fadeOutSlow()
-# 		onboarding.ShowTileDupe.fadeOutSlow()
-# 		onboarding.ShowTitle.fadeOutSlow()
-# 		onboarding.NavBar.fadeOutSlow()
-# 		onboarding.NavBarTitle.fadeOutSlow()
-#     Utils.delay 4, ->
-#     	onboarding.TrackProgress.fadeOutSlow()
-# 		onboarding.DividerProgress.fadeOutSlow()
-# 		onboarding.ShowTile.fadeOutSlow()
-# 		onboarding.ShowTileDupe.fadeOutSlow()
-# 		onboarding.ShowTitle.fadeOutSlow()
-# 		onboarding.NavBar.fadeOutSlow()
-# 		onboarding.NavBarTitle.fadeOutSlow()
-# 		onboarding.StatusBar.fadeOutSlow()
-# 		onboarding.PauseBtn.fadeOutSlow()
+	Utils.delay 4, ->
+		onboarding.TrackProgress.fadeOutSlow()
+		onboarding.DividerProgress.fadeOutSlow()
+		onboarding.ShowTile.fadeOutSlow()
+		onboarding.ShowTileDupe.fadeOutSlow()
+		onboarding.ShowTitle.fadeOutSlow()
+		onboarding.NavBar.fadeOutSlow()
+		onboarding.NavBarTitle.fadeOutSlow()
+		onboarding.StatusBar.fadeOutSlow()
+		onboarding.PauseBtn.fadeOutSlow()
 
 onboarding.PushBtnNo.on Events.TouchEnd, ->
   onboarding.PushBtnNo.states.switch("engaged")
