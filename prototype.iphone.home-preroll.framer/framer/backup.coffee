@@ -77,7 +77,7 @@ home.PlayBtn.states.animationOptions = {
 # 300x250 Ad Unit
 home.AdUnit.states.add({
     initial: {y:-500},
-    preroll: {y:150},
+    preroll: {y:166},
 })
 home.AdUnit.states.animationOptions = {
 	curve: "ease-out",

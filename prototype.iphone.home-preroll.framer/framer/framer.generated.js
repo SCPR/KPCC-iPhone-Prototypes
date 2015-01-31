@@ -556,7 +556,8 @@ window.Framer.Defaults.DeviceView = {
 };
 
 window.FramerStudioInfo = {
-  "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/"
+  "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
+  "documentTitle" : "prototype.iphone.home-preroll.framer"
 };
 
 Framer.Device = new Framer.DeviceView();
