@@ -165,7 +165,7 @@ window.__imported__["scrubber/layers.json.js"] = [
           "frame" : {
             "y" : 701,
             "x" : 31,
-            "width" : 153,
+            "width" : 162,
             "height" : 34
           }
         },
@@ -173,7 +173,7 @@ window.__imported__["scrubber/layers.json.js"] = [
         "layerFrame" : {
           "y" : 701,
           "x" : 31,
-          "width" : 153,
+          "width" : 162,
           "height" : 34
         },
         "name" : "TrackDuration"
