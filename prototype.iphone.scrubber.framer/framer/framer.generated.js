@@ -101,26 +101,26 @@
 }).call(this);
 
 window.__imported__ = window.__imported__ || {};
-window.__imported__["prev-next/layers.json.js"] = [
+window.__imported__["scrubber/layers.json.js"] = [
   {
     "maskFrame" : null,
-    "id" : "A7353614-C71A-4BF4-BDC3-42F5A2B40614",
+    "id" : "AECF1D1D-600A-4C68-BB74-2DEAB580B22D",
     "visible" : true,
     "children" : [
       {
         "maskFrame" : null,
-        "id" : "3A980765-1FF4-4F1B-8C9A-9419CE60EEF3",
+        "id" : "4FFDAEE9-17A7-481F-BEB7-E8879DD94006",
         "visible" : true,
         "children" : [
           {
             "maskFrame" : null,
-            "id" : "991ED392-518B-411E-91F8-20650A45A02B",
+            "id" : "41651BBF-A93A-4DF0-A536-E4441FC9EDCE",
             "visible" : true,
             "children" : [
 
             ],
             "image" : {
-              "path" : "images\/topmenu-991ED392-518B-411E-91F8-20650A45A02B.png",
+              "path" : "images\/topmenu-41651BBF-A93A-4DF0-A536-E4441FC9EDCE.png",
               "frame" : {
                 "y" : 63,
                 "x" : 28,
@@ -139,13 +139,13 @@ window.__imported__["prev-next/layers.json.js"] = [
           },
           {
             "maskFrame" : null,
-            "id" : "BF4B9DF3-E2C5-430B-B7EF-CAA8F0DD5BCA",
+            "id" : "E47342EC-7C00-4680-8F54-5F47CBBFA030",
             "visible" : true,
             "children" : [
 
             ],
             "image" : {
-              "path" : "images\/KPCC_Live__disclosure_indicator_3-BF4B9DF3-E2C5-430B-B7EF-CAA8F0DD5BCA.png",
+              "path" : "images\/KPCC_Live__disclosure_indicator_3-E47342EC-7C00-4680-8F54-5F47CBBFA030.png",
               "frame" : {
                 "y" : 61,
                 "x" : 241,
@@ -164,18 +164,18 @@ window.__imported__["prev-next/layers.json.js"] = [
           },
           {
             "maskFrame" : null,
-            "id" : "9CB4AD48-7422-48E7-BE88-06DCFE67CC21",
+            "id" : "E6C8A702-C053-4A86-8CC1-C15F40C931D4",
             "visible" : true,
             "children" : [
               {
                 "maskFrame" : null,
-                "id" : "5189D7B0-9812-44B3-A82B-383062126393",
+                "id" : "0DBDAB2C-3B2E-4635-AE57-FDAB79835618",
                 "visible" : true,
                 "children" : [
 
                 ],
                 "image" : {
-                  "path" : "images\/lightcontent_status_bar-5189D7B0-9812-44B3-A82B-383062126393.png",
+                  "path" : "images\/lightcontent_status_bar-0DBDAB2C-3B2E-4635-AE57-FDAB79835618.png",
                   "frame" : {
                     "y" : 6,
                     "x" : 11,
@@ -194,7 +194,7 @@ window.__imported__["prev-next/layers.json.js"] = [
               }
             ],
             "image" : {
-              "path" : "images\/Rectangle_61__lightcontent_status_bar-9CB4AD48-7422-48E7-BE88-06DCFE67CC21.png",
+              "path" : "images\/Rectangle_61__lightcontent_status_bar-E6C8A702-C053-4A86-8CC1-C15F40C931D4.png",
               "frame" : {
                 "y" : 6,
                 "x" : 11,
@@ -213,11 +213,11 @@ window.__imported__["prev-next/layers.json.js"] = [
           }
         ],
         "image" : {
-          "path" : "images\/Navbar-3A980765-1FF4-4F1B-8C9A-9419CE60EEF3.png",
+          "path" : "images\/Navbar-4FFDAEE9-17A7-481F-BEB7-E8879DD94006.png",
           "frame" : {
             "y" : 0,
             "x" : 0,
-            "width" : 640,
+            "width" : 639,
             "height" : 119
           }
         },
@@ -225,220 +225,95 @@ window.__imported__["prev-next/layers.json.js"] = [
         "layerFrame" : {
           "y" : 0,
           "x" : 0,
-          "width" : 640,
+          "width" : 639,
           "height" : 119
         },
         "name" : "Navbar"
       },
       {
         "maskFrame" : null,
-        "id" : "FC94BC74-CC3B-49C3-892D-C79DF64E9F8B",
+        "id" : "C7F2A475-C4A0-4D9C-B776-1C769CCF0A8C",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/Show_Title-FC94BC74-CC3B-49C3-892D-C79DF64E9F8B.png",
+          "path" : "images\/CloseBtn-C7F2A475-C4A0-4D9C-B776-1C769CCF0A8C.png",
           "frame" : {
-            "y" : 154,
-            "x" : 29,
-            "width" : 582,
-            "height" : 39
+            "y" : 54,
+            "x" : 565,
+            "width" : 36,
+            "height" : 37
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 154,
-          "x" : 29,
-          "width" : 582,
-          "height" : 39
+          "y" : 54,
+          "x" : 565,
+          "width" : 36,
+          "height" : 37
         },
-        "name" : "Show_Title"
+        "name" : "CloseBtn"
       },
       {
         "maskFrame" : null,
-        "id" : "5CC26AB3-323F-4103-AE0E-205CFB3DDF9B",
+        "id" : "ED273436-88D8-45CF-911E-4290ADFBA73F",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/PrevEpisodeTitle-5CC26AB3-323F-4103-AE0E-205CFB3DDF9B.png",
+          "path" : "images\/TrackDuration-ED273436-88D8-45CF-911E-4290ADFBA73F.png",
           "frame" : {
-            "y" : 479,
-            "x" : 30,
-            "width" : 446,
-            "height" : 155
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 479,
-          "x" : 30,
-          "width" : 446,
-          "height" : 155
-        },
-        "name" : "PrevEpisodeTitle"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "3884082B-1240-4A67-87EF-83D58249CEE7",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/LoadingEpisode-3884082B-1240-4A67-87EF-83D58249CEE7.png",
-          "frame" : {
-            "y" : 702,
-            "x" : 32,
-            "width" : 122,
+            "y" : 701,
+            "x" : 31,
+            "width" : 153,
             "height" : 34
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 702,
-          "x" : 32,
-          "width" : 122,
+          "y" : 701,
+          "x" : 31,
+          "width" : 153,
           "height" : 34
         },
-        "name" : "LoadingEpisode"
+        "name" : "TrackDuration"
       },
       {
         "maskFrame" : null,
-        "id" : "30E1805B-E6CE-42AD-B437-BA2E3EA59CC8",
+        "id" : "51A86294-AF4F-4C54-8C74-BFBE5F2A5B10",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/PrevTrackProgress-30E1805B-E6CE-42AD-B437-BA2E3EA59CC8.png",
+          "path" : "images\/TrackProgress-51A86294-AF4F-4C54-8C74-BFBE5F2A5B10.png",
           "frame" : {
-            "y" : 701,
+            "y" : 754,
             "x" : 14,
-            "width" : 172,
-            "height" : 59
+            "width" : 139,
+            "height" : 6
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 701,
+          "y" : 754,
           "x" : 14,
-          "width" : 172,
-          "height" : 59
+          "width" : 139,
+          "height" : 6
         },
-        "name" : "PrevTrackProgress"
+        "name" : "TrackProgress"
       },
       {
         "maskFrame" : null,
-        "id" : "225BA07F-380E-45A2-8474-0B33B02F2C5E",
+        "id" : "7DC234F5-B7F7-4ED1-8656-D2FBE2C6F3C1",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/NextEpisodeTitle-225BA07F-380E-45A2-8474-0B33B02F2C5E.png",
-          "frame" : {
-            "y" : 479,
-            "x" : 28,
-            "width" : 548,
-            "height" : 155
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 479,
-          "x" : 28,
-          "width" : 548,
-          "height" : 155
-        },
-        "name" : "NextEpisodeTitle"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "749EDEC1-7919-4F08-A175-198ED68851B2",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/NextTrackProgress-749EDEC1-7919-4F08-A175-198ED68851B2.png",
-          "frame" : {
-            "y" : 701,
-            "x" : 14,
-            "width" : 172,
-            "height" : 59
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 701,
-          "x" : 14,
-          "width" : 172,
-          "height" : 59
-        },
-        "name" : "NextTrackProgress"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "DE3E68C3-4483-42BA-982D-ED3494CD8A2A",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/CurrentEpisodeTitle-DE3E68C3-4483-42BA-982D-ED3494CD8A2A.png",
-          "frame" : {
-            "y" : 216,
-            "x" : 30,
-            "width" : 469,
-            "height" : 154
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 216,
-          "x" : 30,
-          "width" : 469,
-          "height" : 154
-        },
-        "name" : "CurrentEpisodeTitle"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "656723F4-98F5-412E-A3D2-9E635EBF77D0",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/CurrentTrackProgress-656723F4-98F5-412E-A3D2-9E635EBF77D0.png",
-          "frame" : {
-            "y" : 701,
-            "x" : 14,
-            "width" : 208,
-            "height" : 59
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 701,
-          "x" : 14,
-          "width" : 208,
-          "height" : 59
-        },
-        "name" : "CurrentTrackProgress"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "8182EFF0-0BB6-4BDD-82ED-2AB495687A19",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/Divider-8182EFF0-0BB6-4BDD-82ED-2AB495687A19.png",
+          "path" : "images\/TrackLength-7DC234F5-B7F7-4ED1-8656-D2FBE2C6F3C1.png",
           "frame" : {
             "y" : 760,
             "x" : 14,
@@ -453,22 +328,247 @@ window.__imported__["prev-next/layers.json.js"] = [
           "width" : 613,
           "height" : 2
         },
-        "name" : "Divider"
+        "name" : "TrackLength"
       },
       {
         "maskFrame" : null,
-        "id" : "DEA47C09-41EB-482E-B6E7-548A4D71C685",
+        "id" : "BFB5A350-F8E0-4CFF-A679-297E486CBA81",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/TrackDurationEngaged-BFB5A350-F8E0-4CFF-A679-297E486CBA81.png",
+          "frame" : {
+            "y" : 475,
+            "x" : 159,
+            "width" : 324,
+            "height" : 67
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 475,
+          "x" : 159,
+          "width" : 324,
+          "height" : 67
+        },
+        "name" : "TrackDurationEngaged"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "24085D8B-BAEA-4C50-A615-EFEC45FCB014",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/TrackProgressEngaged-24085D8B-BAEA-4C50-A615-EFEC45FCB014.png",
+          "frame" : {
+            "y" : 579,
+            "x" : 14,
+            "width" : 139,
+            "height" : 183
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 579,
+          "x" : 14,
+          "width" : 139,
+          "height" : 183
+        },
+        "name" : "TrackProgressEngaged"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "3AEA7739-6A3E-4B07-A477-731E57EC3B59",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/TrackLengthEngaged-3AEA7739-6A3E-4B07-A477-731E57EC3B59.png",
+          "frame" : {
+            "y" : 579,
+            "x" : 15,
+            "width" : 611,
+            "height" : 183
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 579,
+          "x" : 15,
+          "width" : 611,
+          "height" : 183
+        },
+        "name" : "TrackLengthEngaged"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "8DE28135-D1D2-400E-87DD-54611E0565C1",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/Forward30-8DE28135-D1D2-400E-87DD-54611E0565C1.png",
+          "frame" : {
+            "y" : 890,
+            "x" : 522,
+            "width" : 66,
+            "height" : 60
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 890,
+          "x" : 522,
+          "width" : 66,
+          "height" : 60
+        },
+        "name" : "Forward30"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "E4E367F3-BFBA-4AE9-AA71-1867DF7BD7D3",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/Back30-E4E367F3-BFBA-4AE9-AA71-1867DF7BD7D3.png",
+          "frame" : {
+            "y" : 890,
+            "x" : 53,
+            "width" : 66,
+            "height" : 60
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 890,
+          "x" : 53,
+          "width" : 66,
+          "height" : 60
+        },
+        "name" : "Back30"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "191E1CFB-C67C-44B2-B6DA-DA737EB87D8D",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowTitle-191E1CFB-C67C-44B2-B6DA-DA737EB87D8D.png",
+          "frame" : {
+            "y" : 153,
+            "x" : 31,
+            "width" : 114,
+            "height" : 20
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 153,
+          "x" : 31,
+          "width" : 114,
+          "height" : 20
+        },
+        "name" : "ShowTitle"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "3AF2FF41-7A8C-438F-BC0A-2E2569830BD6",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/EpisodeDate-3AF2FF41-7A8C-438F-BC0A-2E2569830BD6.png",
+          "frame" : {
+            "y" : 345,
+            "x" : 32,
+            "width" : 164,
+            "height" : 26
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 345,
+          "x" : 32,
+          "width" : 164,
+          "height" : 26
+        },
+        "name" : "EpisodeDate"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "21792EE1-BBC0-49AE-B809-DA43CF4D71C9",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/EpisodeTitle-21792EE1-BBC0-49AE-B809-DA43CF4D71C9.png",
+          "frame" : {
+            "y" : 216,
+            "x" : 32,
+            "width" : 580,
+            "height" : 100
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 216,
+          "x" : 32,
+          "width" : 580,
+          "height" : 100
+        },
+        "name" : "EpisodeTitle"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "40D98AD4-B068-449D-AFC4-F991AEA32C73",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowDivider-40D98AD4-B068-449D-AFC4-F991AEA32C73.png",
+          "frame" : {
+            "y" : 192,
+            "x" : 29,
+            "width" : 582,
+            "height" : 1
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 192,
+          "x" : 29,
+          "width" : 582,
+          "height" : 1
+        },
+        "name" : "ShowDivider"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "D607E46C-2921-4F54-9C35-D1FD71B9B053",
         "visible" : true,
         "children" : [
           {
             "maskFrame" : null,
-            "id" : "71E3FB1C-C008-44E4-BD4D-BB19E840DAE2",
+            "id" : "CA8E1672-3720-4405-9411-90508D17836D",
             "visible" : true,
             "children" : [
 
             ],
             "image" : {
-              "path" : "images\/Rectangle_49__Rectangle_50-71E3FB1C-C008-44E4-BD4D-BB19E840DAE2.png",
+              "path" : "images\/Rectangle_49__Rectangle_50-CA8E1672-3720-4405-9411-90508D17836D.png",
               "frame" : {
                 "y" : 888,
                 "x" : 298,
@@ -487,7 +587,7 @@ window.__imported__["prev-next/layers.json.js"] = [
           }
         ],
         "image" : {
-          "path" : "images\/PauseBtn-DEA47C09-41EB-482E-B6E7-548A4D71C685.png",
+          "path" : "images\/PauseBtn-D607E46C-2921-4F54-9C35-D1FD71B9B053.png",
           "frame" : {
             "y" : 832,
             "x" : 232,
@@ -506,13 +606,13 @@ window.__imported__["prev-next/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
-        "id" : "D8EAAE7D-1B27-4052-9F08-2F7EBCA2783A",
+        "id" : "3D0E7DD5-537C-4F77-9984-8575156FD8AE",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/ContentShare-D8EAAE7D-1B27-4052-9F08-2F7EBCA2783A.png",
+          "path" : "images\/ShareBtn-3D0E7DD5-537C-4F77-9984-8575156FD8AE.png",
           "frame" : {
             "y" : 1054,
             "x" : 299,
@@ -527,17 +627,17 @@ window.__imported__["prev-next/layers.json.js"] = [
           "width" : 42,
           "height" : 58
         },
-        "name" : "ContentShare"
+        "name" : "ShareBtn"
       },
       {
         "maskFrame" : null,
-        "id" : "1DCA311C-5B24-43EE-932D-C9A663C86A2F",
+        "id" : "BE92B9AE-E13F-41A6-875D-45A5C65997F0",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/ShowTile-1DCA311C-5B24-43EE-932D-C9A663C86A2F.png",
+          "path" : "images\/ProgramTile-BE92B9AE-E13F-41A6-875D-45A5C65997F0.png",
           "frame" : {
             "y" : 0,
             "x" : 0,
@@ -552,36 +652,11 @@ window.__imported__["prev-next/layers.json.js"] = [
           "width" : 640,
           "height" : 1136
         },
-        "name" : "ShowTile"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "B27B1F32-9969-47A2-BC15-51406286A6A0",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/ShowTile2-B27B1F32-9969-47A2-BC15-51406286A6A0.png",
-          "frame" : {
-            "y" : 0,
-            "x" : 0,
-            "width" : 640,
-            "height" : 1136
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 0,
-          "x" : 0,
-          "width" : 640,
-          "height" : 1136
-        },
-        "name" : "ShowTile2"
+        "name" : "ProgramTile"
       }
     ],
     "image" : {
-      "path" : "images\/Segment_Player__Program_Episode-A7353614-C71A-4BF4-BDC3-42F5A2B40614.png",
+      "path" : "images\/Scrubber-AECF1D1D-600A-4C68-BB74-2DEAB580B22D.png",
       "frame" : {
         "y" : 0,
         "x" : 0,
@@ -596,7 +671,7 @@ window.__imported__["prev-next/layers.json.js"] = [
       "width" : 640,
       "height" : 1136
     },
-    "name" : "Segment_Player__Program_Episode"
+    "name" : "Scrubber"
   }
 ]
 window.Framer.Defaults.DeviceView = {
@@ -608,7 +683,7 @@ window.Framer.Defaults.DeviceView = {
 
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
-  "documentTitle" : "prototype.iphone.programs-prev-next.framer"
+  "documentTitle" : "prototype.iphone.scrubber.framer"
 };
 
 Framer.Device = new Framer.DeviceView();
