@@ -631,6 +631,31 @@ window.__imported__["scrubber/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
+        "id" : "11340C44-BDC6-45DE-B0AB-08E36FD143C7",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/PressZone-11340C44-BDC6-45DE-B0AB-08E36FD143C7.png",
+          "frame" : {
+            "y" : 696,
+            "x" : 15,
+            "width" : 610,
+            "height" : 73
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 696,
+          "x" : 15,
+          "width" : 610,
+          "height" : 73
+        },
+        "name" : "PressZone"
+      },
+      {
+        "maskFrame" : null,
         "id" : "BE92B9AE-E13F-41A6-875D-45A5C65997F0",
         "visible" : true,
         "children" : [
