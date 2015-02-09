@@ -44,8 +44,8 @@ scrubber.ProgramTile.states.add({
     initial: {blur:0, brightness:100, scale:1},
 })
 scrubber.ProgramTile.states.animationOptions = {
-	curve: "linear",
-	time: 0.2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Navbar
@@ -54,7 +54,8 @@ scrubber.Navbar.states.add({
     initial: {y:0},
 })
 scrubber.Navbar.states.animationOptions = {
-	curve: curve2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Content Share Button
@@ -63,8 +64,8 @@ scrubber.ShareBtn.states.add({
     initial: {opacity:1},
 })
 scrubber.ShareBtn.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Show Title Label
@@ -73,8 +74,8 @@ scrubber.ShowTitle.states.add({
     initial: {opacity:1},
 })
 scrubber.ShowTitle.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 #Episode Title Label
@@ -83,8 +84,8 @@ scrubber.EpisodeTitle.states.add({
     initial: {opacity:1},
 })
 scrubber.EpisodeTitle.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 #Episode Date Label
@@ -93,8 +94,8 @@ scrubber.EpisodeDate.states.add({
     initial: {opacity:1},
 })
 scrubber.EpisodeDate.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Show Divider
@@ -103,8 +104,8 @@ scrubber.ShowDivider.states.add({
     initial: {opacity:1},
 })
 scrubber.ShowDivider.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Track Duration Label
@@ -113,8 +114,8 @@ scrubber.TrackDuration.states.add({
     initial: {opacity:1},
 })
 scrubber.TrackDuration.states.animationOptions = {
-	curve: "linear",
-	time: 0.1
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Track Length Label
@@ -123,7 +124,7 @@ scrubber.TrackLength.states.add({
     initial: {opacity:1},
 })
 scrubber.TrackLength.states.animationOptions = {
-	curve: "linear",
+	curve: "ease-in-out",
 	time: 0.05
 }
 
@@ -131,18 +132,22 @@ scrubber.TrackLength.states.animationOptions = {
 scrubber.Back30.states.add({
     hidden: {opacity:0, scale: 0},
     engaged: {opacity:1, scale: 1},
+    press: {scale: 0.9, curve: curve1}
 })
 scrubber.Back30.states.animationOptions = {
-	curve: curve2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Forward 30 Button
 scrubber.Forward30.states.add({
     hidden: {opacity:0, scale: 0},
     engaged: {opacity:1, scale: 1},
+    press: {scale: 0.9, curve: curve1}
 })
 scrubber.Forward30.states.animationOptions = {
-	curve: curve2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Track Duration Engaged Label
@@ -151,7 +156,8 @@ scrubber.TrackDurationEngaged.states.add({
     engaged: {opacity:1, scale: 1},
 })
 scrubber.TrackDurationEngaged.states.animationOptions = {
-	curve: curve2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Track Length Engaged
@@ -160,8 +166,8 @@ scrubber.TrackLengthEngaged.states.add({
     engaged: {height:183, y: 579},
 })
 scrubber.TrackLengthEngaged.states.animationOptions = {
-	curve: "linear",
-	time: 0.12
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Track Progress Engaged
@@ -170,17 +176,19 @@ scrubber.TrackProgressEngaged.states.add({
     engaged: {height:183, y: 579},
 })
 scrubber.TrackProgressEngaged.states.animationOptions = {
-	curve: "linear",
-	time: 0.12
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 # Close Button
 scrubber.CloseBtn.states.add({
     hidden: {opacity:0, scale: 0},
     engaged: {opacity:1, scale: 1},
+    press: {scale: 0.8, curve: curve1}
 })
 scrubber.CloseBtn.states.animationOptions = {
-	curve: curve2
+	curve: "ease-in-out",
+	time: 0.11
 }
 
 
@@ -188,11 +196,29 @@ scrubber.CloseBtn.states.animationOptions = {
 # Trigger animations
 ###############################
 
+# Make close button respond to touch
+scrubber.CloseBtn.on Events.TouchStart, ->
+  scrubber.CloseBtn.states.switch("press")
+  
+# Make back30 button respond to touch
+scrubber.Back30.on Events.TouchStart, ->
+  scrubber.Back30.states.switch("press")
+  
+scrubber.Back30.on Events.TouchEnd, ->
+  scrubber.Back30.states.switch("engaged")
+  
+# Make forward30 button respond to touch
+scrubber.Forward30.on Events.TouchStart, ->
+  scrubber.Forward30.states.switch("press")
+  
+scrubber.Forward30.on Events.TouchEnd, ->
+  scrubber.Forward30.states.switch("engaged")
+
 isHeld = false
 
 scrubber.PressZone.on Events.TouchStart, () ->
   isHeld = true
-  Utils.delay .5, () ->
+  Utils.delay .35, () ->
     if isHeld then triggerLongHold()
     
 triggerLongHold = () ->
@@ -213,3 +239,20 @@ triggerLongHold = () ->
   scrubber.TrackProgressEngaged.states.switch("engaged")
   scrubber.CloseBtn.states.switch("engaged")
   isHeld = false
+  
+scrubber.CloseBtn.on Events.TouchEnd, () ->
+  scrubber.ProgramTile.states.switch("initial")
+  scrubber.Navbar.states.switch("initial")
+  scrubber.TrackDuration.states.switch("initial")
+  scrubber.TrackLength.states.switch("initial")
+  scrubber.ShareBtn.states.switch("initial")
+  scrubber.ShowTitle.states.switch("initial")
+  scrubber.ShowDivider.states.switch("initial")
+  scrubber.EpisodeTitle.states.switch("initial")
+  scrubber.EpisodeDate.states.switch("initial")
+  scrubber.Back30.states.switch("hidden")
+  scrubber.Forward30.states.switch("hidden")
+  scrubber.TrackDurationEngaged.states.switch("hidden")
+  scrubber.TrackLengthEngaged.states.switch("hidden")
+  scrubber.TrackProgressEngaged.states.switch("initial")
+  scrubber.CloseBtn.states.switch("engaged")
