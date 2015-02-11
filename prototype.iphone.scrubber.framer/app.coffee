@@ -26,6 +26,10 @@ scrubber.Back30.scale = 0
 scrubber.Forward30.scale = 0
 scrubber.CloseBtn.scale = 0
 
+# Create Transparent Layer for Dragging
+scrubber.dragCanvas = new Layer
+	x:0, y:565, width:0, height:200, backgroundColor: "transparent", opacity: 1
+  
 ###############################
 # Set some animation styles
 ###############################
@@ -41,7 +45,7 @@ curve2 = "spring(130,20,10)"
 # Program Tile Image BG
 scrubber.ProgramTile.states.add({
     blur: {blur:20, brightness:80, scale:1.02},
-    initial: {blur:0, brightness:100, scale:1},
+    initial: {blur:0, brightness:100, scale:1}
 })
 scrubber.ProgramTile.states.animationOptions = {
 	curve: "ease-in-out",
@@ -51,7 +55,7 @@ scrubber.ProgramTile.states.animationOptions = {
 # Navbar
 scrubber.Navbar.states.add({
     hidden: {y:-121},
-    initial: {y:0},
+    initial: {y:0}
 })
 scrubber.Navbar.states.animationOptions = {
 	curve: "ease-in-out",
@@ -61,7 +65,7 @@ scrubber.Navbar.states.animationOptions = {
 # Content Share Button
 scrubber.ShareBtn.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.ShareBtn.states.animationOptions = {
 	curve: "ease-in-out",
@@ -71,7 +75,7 @@ scrubber.ShareBtn.states.animationOptions = {
 # Show Title Label
 scrubber.ShowTitle.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.ShowTitle.states.animationOptions = {
 	curve: "ease-in-out",
@@ -81,7 +85,7 @@ scrubber.ShowTitle.states.animationOptions = {
 #Episode Title Label
 scrubber.EpisodeTitle.states.add({
     dimmed: {opacity:0.6},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.EpisodeTitle.states.animationOptions = {
 	curve: "ease-in-out",
@@ -91,7 +95,7 @@ scrubber.EpisodeTitle.states.animationOptions = {
 #Episode Date Label
 scrubber.EpisodeDate.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.EpisodeDate.states.animationOptions = {
 	curve: "ease-in-out",
@@ -101,7 +105,7 @@ scrubber.EpisodeDate.states.animationOptions = {
 # Show Divider
 scrubber.ShowDivider.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.ShowDivider.states.animationOptions = {
 	curve: "ease-in-out",
@@ -111,7 +115,7 @@ scrubber.ShowDivider.states.animationOptions = {
 # Track Duration Label
 scrubber.TrackDuration.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.TrackDuration.states.animationOptions = {
 	curve: "ease-in-out",
@@ -121,7 +125,7 @@ scrubber.TrackDuration.states.animationOptions = {
 # Track Length Label
 scrubber.TrackLength.states.add({
     hidden: {opacity:0},
-    initial: {opacity:1},
+    initial: {opacity:1}
 })
 scrubber.TrackLength.states.animationOptions = {
 	curve: "ease-in-out",
@@ -153,7 +157,7 @@ scrubber.Forward30.states.animationOptions = {
 # Track Duration Engaged Label
 scrubber.TrackDurationEngaged.states.add({
     hidden: {opacity:0, scale: 0},
-    engaged: {opacity:1, scale: 1},
+    engaged: {opacity:1, scale: 1}
 })
 scrubber.TrackDurationEngaged.states.animationOptions = {
 	curve: "ease-in-out",
@@ -163,7 +167,7 @@ scrubber.TrackDurationEngaged.states.animationOptions = {
 # Track Length Engaged
 scrubber.TrackLengthEngaged.states.add({
     hidden: {height:0, y: 760},
-    engaged: {height:183, y: 579},
+    engaged: {height:183, y: 579}
 })
 scrubber.TrackLengthEngaged.states.animationOptions = {
 	curve: "ease-in-out",
@@ -173,11 +177,21 @@ scrubber.TrackLengthEngaged.states.animationOptions = {
 # Track Progress Engaged
 scrubber.TrackProgressEngaged.states.add({
     initial: {height:6, y: 755},
-    engaged: {height:183, y: 579},
+    engaged: {height:183, y: 579}
 })
 scrubber.TrackProgressEngaged.states.animationOptions = {
 	curve: "ease-in-out",
 	time: 0.11
+}
+
+# Drag Canvas 
+scrubber.dragCanvas.states.add({
+    initial: {width:0},
+    engaged: {width:640}
+})
+scrubber.TrackProgressEngaged.states.animationOptions = {
+	curve: "linear",
+	time: 0.05
 }
 
 # Close Button
@@ -191,10 +205,45 @@ scrubber.CloseBtn.states.animationOptions = {
 	time: 0.11
 }
 
+# Pause Button
+scrubber.PauseBtn.states.add({
+    engaged: {scale: 1},
+    press: {scale: 0.95, curve: curve1}
+})
+scrubber.PauseBtn.states.animationOptions = {
+	curve: "ease-in-out",
+	time: 0.11
+}
+
+
 
 ###############################
 # Trigger animations
 ###############################
+
+# Make Canvas Draggable
+scrubber.dragCanvas.draggable.enabled = true
+scrubber.dragCanvas.draggable.speedX = 1.5
+scrubber.dragCanvas.draggable.speedY = 0
+initX = scrubber.dragCanvas.x
+initMidX = scrubber.dragCanvas.midX
+initY = scrubber.dragCanvas.y
+windowHeight = window.innerHeight
+windowWidth = window.innerHeight
+
+# Set behavior on DragMove
+scrubber.dragCanvas.on Events.DragMove, (event) ->
+	
+  # Blur ProgramTile, fade current track progress and share button
+  scrubber.ProgramTile.states.switch("initial")
+  
+  # set boundary for draggable canvas
+  boundRadius = 700
+  # Set resistance and boundaries on draggable layer
+  position = x: 0
+  distance = x: Math.abs(scrubber.dragCanvas.x - position.x)
+  scrubber.dragCanvas.draggable.speedX = 2 - Math.min(distance.x, boundRadius) / boundRadius
+
 
 # Make close button respond to touch
 scrubber.CloseBtn.on Events.TouchStart, ->
@@ -213,6 +262,13 @@ scrubber.Forward30.on Events.TouchStart, ->
   
 scrubber.Forward30.on Events.TouchEnd, ->
   scrubber.Forward30.states.switch("engaged")
+  
+# Make pause button respond to touch
+scrubber.PauseBtn.on Events.TouchStart, ->
+  scrubber.PauseBtn.states.switch("press")
+  
+scrubber.PauseBtn.on Events.TouchEnd, ->
+  scrubber.PauseBtn.states.switch("engaged")
 
 isHeld = false
 
@@ -238,6 +294,7 @@ triggerLongHold = () ->
   scrubber.TrackLengthEngaged.states.switch("engaged")
   scrubber.TrackProgressEngaged.states.switch("engaged")
   scrubber.CloseBtn.states.switch("engaged")
+  scrubber.dragCanvas.states.switch("engaged")
   isHeld = false
   
 scrubber.CloseBtn.on Events.TouchEnd, () ->
@@ -256,3 +313,4 @@ scrubber.CloseBtn.on Events.TouchEnd, () ->
   scrubber.TrackLengthEngaged.states.switch("hidden")
   scrubber.TrackProgressEngaged.states.switch("initial")
   scrubber.CloseBtn.states.switch("engaged")
+  scrubber.dragCanvas.states.switch("initial")
