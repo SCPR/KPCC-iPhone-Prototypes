@@ -205,50 +205,51 @@ window.__imported__["live-rewind/layers.json.js"] = [
       },
       {
         "maskFrame" : null,
-        "id" : "A00557E5-465F-48E8-987B-4621EE7EFD61",
+        "id" : "83FB0FC3-3968-4D4C-9545-599E4D4AF510",
         "visible" : true,
         "children" : [
-          {
-            "maskFrame" : null,
-            "id" : "83FB0FC3-3968-4D4C-9545-599E4D4AF510",
-            "visible" : true,
-            "children" : [
 
-            ],
-            "image" : {
-              "path" : "images\/Progress-83FB0FC3-3968-4D4C-9545-599E4D4AF510.png",
-              "frame" : {
-                "y" : 754,
-                "x" : 14,
-                "width" : 237,
-                "height" : 6
-              }
-            },
-            "imageType" : "png",
-            "layerFrame" : {
-              "y" : 754,
-              "x" : 14,
-              "width" : 237,
-              "height" : 6
-            },
-            "name" : "Progress"
-          }
         ],
         "image" : {
-          "path" : "images\/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png",
+          "path" : "images\/Progress-83FB0FC3-3968-4D4C-9545-599E4D4AF510.png",
           "frame" : {
             "y" : 754,
             "x" : 14,
-            "width" : 612,
-            "height" : 8
+            "width" : 237,
+            "height" : 6
           }
         },
         "imageType" : "png",
         "layerFrame" : {
           "y" : 754,
           "x" : 14,
+          "width" : 237,
+          "height" : 6
+        },
+        "name" : "Progress"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "A00557E5-465F-48E8-987B-4621EE7EFD61",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/DividerProgress-A00557E5-465F-48E8-987B-4621EE7EFD61.png",
+          "frame" : {
+            "y" : 760,
+            "x" : 14,
+            "width" : 612,
+            "height" : 2
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 760,
+          "x" : 14,
           "width" : 612,
-          "height" : 8
+          "height" : 2
         },
         "name" : "DividerProgress"
       },
@@ -401,6 +402,31 @@ window.__imported__["live-rewind/layers.json.js"] = [
           "height" : 1136
         },
         "name" : "ShowTIle"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "7942C9E4-F747-44F3-8955-C1A90738F46C",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowTIleBackdrop-7942C9E4-F747-44F3-8955-C1A90738F46C.png",
+          "frame" : {
+            "y" : 0,
+            "x" : 0,
+            "width" : 640,
+            "height" : 1136
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 0,
+          "x" : 0,
+          "width" : 640,
+          "height" : 1136
+        },
+        "name" : "ShowTIleBackdrop"
       }
     ],
     "image" : {

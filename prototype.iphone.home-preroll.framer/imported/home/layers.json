@@ -424,6 +424,31 @@
           "height" : 1136
         },
         "name" : "ShowTIle"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "49C6E9DE-0700-4634-B1D4-144471E56B69",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ShowTIleBackdrop-49C6E9DE-0700-4634-B1D4-144471E56B69.png",
+          "frame" : {
+            "y" : 0,
+            "x" : 0,
+            "width" : 640,
+            "height" : 1136
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 0,
+          "x" : 0,
+          "width" : 640,
+          "height" : 1136
+        },
+        "name" : "ShowTIleBackdrop"
       }
     ],
     "image" : {

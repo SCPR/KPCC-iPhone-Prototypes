@@ -576,6 +576,31 @@ window.__imported__["scrubber/layers.json.js"] = [
           "height" : 1136
         },
         "name" : "ProgramTile"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "7CA0DF79-2C89-4A21-B312-709415FF7E4D",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/ProgramTileBackdrop-7CA0DF79-2C89-4A21-B312-709415FF7E4D.png",
+          "frame" : {
+            "y" : 0,
+            "x" : 0,
+            "width" : 640,
+            "height" : 1136
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 0,
+          "x" : 0,
+          "width" : 640,
+          "height" : 1136
+        },
+        "name" : "ProgramTileBackdrop"
       }
     ],
     "image" : {
