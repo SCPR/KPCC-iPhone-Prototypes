@@ -8,6 +8,8 @@ programSchedule = Framer.Importer.load "imported/ProgramSchedule"
 # Set canvas BG image
 Framer.Device.background.image = "http://a.scpr.org/i/7a376d4259ccd459d68495f8ee6f7e0f/86185-full.jpg"
 
+programSchedule.NavbarMask.z = 400
+
 
 ###############################
 # Establish states for layers
@@ -30,7 +32,7 @@ programSchedule.Divider.states.add({
 })
 programSchedule.Divider.states.animationOptions = {
 	curve: "linear",
-	time: 0.1
+	time: 0.05
 }
 
 ###############################
@@ -47,6 +49,7 @@ page = new PageComponent
   scrollVertical: false
   # The direction lock is enabled to only allow either horizontal or vertical scrolling
   directionLock: true
+  style = {"z-index": 2}
 
 # Define the first page
 pageOne = new Layer
@@ -80,6 +83,7 @@ programSchedule.NextShow.superLayer = pageTwo
 programSchedule.TImeline.superLayer = pageTwo
 programSchedule.BtnFullSchedule.superLayer = pageTwo
 programSchedule.ScheduleLabel.superLayer = pageTwo
+page.superLayer = programSchedule.Live_Player
 
 # Set BG blur behavior
 page.on Events.TouchStart, (event, currentPage) ->
