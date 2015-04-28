@@ -458,6 +458,13 @@ window.Framer.Defaults.DeviceView = {
   "deviceType" : "iphone-5s-silver"
 };
 
+window.Framer.Defaults.DeviceComponent = {
+  "deviceScale" : 0.5,
+  "orientation" : 0,
+  "contentScale" : 1,
+  "deviceType" : "iphone-5s-silver"
+};
+
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
   "documentTitle" : "prototype.iphone.live-rewind.framer"

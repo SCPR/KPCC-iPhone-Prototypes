@@ -14,14 +14,12 @@ FullScheduleBtn = new Layer
 	height: 63
 	x: 121
 	y: 1010
-	backgroundColor: "transparent"
 
 BackBtn = new Layer
 	width: 93
 	height: 80
 	x: 10
 	y: 40
-	backgroundColor: "transparent"
 	
 # hide hotspots by default
 FullScheduleBtn.sendToBack()

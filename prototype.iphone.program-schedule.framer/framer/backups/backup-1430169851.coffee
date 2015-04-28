@@ -14,14 +14,12 @@ FullScheduleBtn = new Layer
 	height: 63
 	x: 121
 	y: 1010
-	backgroundColor: "transparent"
 
 BackBtn = new Layer
 	width: 93
 	height: 80
 	x: 10
 	y: 40
-	backgroundColor: "transparent"
 	
 # hide hotspots by default
 FullScheduleBtn.sendToBack()
@@ -34,7 +32,6 @@ MenuIconTop = new Layer
 	x: 30
 	y: 64
 	backgroundColor: "#fff"
-	originX:  0
 	
 MenuIconMiddle = new Layer
 	width: 46
@@ -49,7 +46,6 @@ MenuIconBottom = new Layer
 	x: 30
 	y: 90
 	backgroundColor: "#fff"
-	originX:  0
 
 ###############################
 # Set up initial layer states
@@ -64,26 +60,25 @@ programSchedule.Live_Player.width = 640
 
 curve1 = "spring(200,20,30)"
 curve2 = "spring(130,20,10)"
-curve3 = "spring(200,20,15)"
 
 ###############################
 # Establish states for layers
 ###############################
 
 MenuIconBottom.states.add({
-	initial: { width: 46, rotation: 0, y: 90},
-	engaged: { width: 23, rotation: 45, y: 77 }
+	initial: { width: 46, rotationY: 0},
+	engaged: { width: 23, rotationY: 45 }
 })
 MenuIconBottom.states.animationOptions = {
-	curve: curve3
+	curve: curve1
 }
 
 MenuIconTop.states.add({
-	initial: { width: 46, rotation: 0, y: 64},
-	engaged: { width: 23, rotation: -45, y: 77 }
+	initial: { width: 46, rotationY: 0},
+	engaged: { width: 23, rotationY: 45 }
 })
 MenuIconTop.states.animationOptions = {
-	curve: curve3
+	curve: curve1
 }
 
 # Program Tile Image BG
@@ -121,16 +116,7 @@ programSchedule.ScheduleLabel.states.add ({
 })
 programSchedule.ScheduleLabel.states.animationOptions = {
 	curve: "linear",
-	time: 0.15
-}
-
-programSchedule.LiveLabel.states.add ({
-	hidden: {opacity:0},
-	visible: {opacity:1}
-})
-programSchedule.LiveLabel.states.animationOptions = {
-	curve: "linear",
-	time: 0.15
+	time: 0.3
 }
 
 ###############################
@@ -247,17 +233,16 @@ page.on "change:currentPage", (currentPage) ->
   	programSchedule.BGTile.states.switch("initial")
   else if currentPageIndex == index + 1
   	FullScheduleBtn.bringToFront()
-  	BackBtn.sendToBack()
-  	MenuIconTop.states.switch("initial")
+  	BackBtn.sendToBack()MenuIconTop.states.switch("initial")
   	MenuIconBottom.states.switch("initial")
-  	programSchedule.LiveLabel.states.switch("visible")
-  	programSchedule.ScheduleLabel.states.switch("hidden")
+  	programSchedule.LiveLabel.opacity = 1
+  	programSchedule.ScheduleLabel.opacity = 0
   else
   	programSchedule.BGTile.states.switch("blur")
   	FullScheduleBtn.sendToBack()
   	BackBtn.bringToFront()
   	MenuIconTop.states.switch("engaged")
   	MenuIconBottom.states.switch("engaged")
-  	programSchedule.LiveLabel.states.switch("hidden")
-  	programSchedule.ScheduleLabel.states.switch("visible")
+  	programSchedule.LiveLabel.opacity = 0
+  	programSchedule.ScheduleLabel.opacity = 1
   

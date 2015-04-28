@@ -485,14 +485,14 @@ window.__imported__["ProgramSchedule/layers.json.js"] = [
   }
 ]
 window.Framer.Defaults.DeviceView = {
-  "deviceScale" : -1,
+  "deviceScale" : 0.5,
   "orientation" : 0,
   "contentScale" : 1,
   "deviceType" : "iphone-5s-silver"
 };
 
 window.Framer.Defaults.DeviceComponent = {
-  "deviceScale" : -1,
+  "deviceScale" : 0.5,
   "orientation" : 0,
   "contentScale" : 1,
   "deviceType" : "iphone-5s-silver"
